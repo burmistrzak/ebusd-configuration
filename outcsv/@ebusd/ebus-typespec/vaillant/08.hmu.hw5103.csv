@@ -12,7 +12,7 @@ r,,,CompressorOutletTemp,,,,b509,540200a208,value,,IGN:4,,,,value,,EXP,,°C,temp
 r,,,EevOutletTemp,,,,b509,540200ac08,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,HmuHours,,,,b509,540200b80b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,HeatingHours,,,,b509,540200b90b,value,,IGN:4,,,,value,,UIN,,h,hours
-r,,,DhwHours,,,,b509,540200bc0b,value,,IGN:4,,,,value,,UIN,,h,hours
+r,,,HwcHours,,,,b509,540200bc0b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,CompressorHours,,,,b509,540200c20b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,CompressorStarts,,,,b509,540200c30b,value,,IGN:4,,,,value,,UIN,,,start count
 r,,,BuildingPumpHours,,,,b509,540200c40b,value,,IGN:4,,,,value,,UIN,,h,hours
@@ -27,19 +27,19 @@ r,,,Fan2Starts,,,,b509,540200da0b,value,,IGN:4,,,,value,,UIN,,,start count
 r,,,AirInletTemp,,,,b509,540200de08,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Status,,,,b511,01,supplytemp,,D1C,,°C,temperature,returntemp,,D1C,,°C,temperature,ign,,IGN:4,,,,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump state
 [id_sw>=902]r,,,CompressorHeating,,,,b511,1801,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
-[id_sw>=902]r,,,CompressorDhw,,,,b511,1802,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
-r,,,CurrentPowerConsumption,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
+[id_sw>=902]r,,,CompressorHwc,,,,b511,1802,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
+r,,,HmuPowerConsumption,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
 r,,,YieldHeatingDay,,,,b51a,05ff3200,value,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,YieldCoolingDay,,,,b51a,05ff3201,value,,IGN:3,,,,value,,UIN,10,kWh,
-r,,,YieldDhwDay,,,,b51a,05ff3202,value,,IGN:3,,,,value,,UIN,10,kWh,
+r,,,YieldHwcDay,,,,b51a,05ff3202,value,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,YieldHeatingMonth,,,,b51a,05ff320e,value,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,CopHeatingMonth,,,,b51a,05ff320f,value,,IGN:3,,,,value,,UIN,10,,
 r,,,YieldHeating,,,,b51a,05ff3210,value,,IGN:3,,,,value,,UIN,,kWh,
 r,,,CopHeating,,,,b51a,05ff3211,value,,IGN:3,,,,value,,UIN,10,,
-r,,,YieldDhwMonth,,,,b51a,05ff3212,value,,IGN:3,,,,value,,UIN,10,kWh,
-r,,,CopDhwMonth,,,,b51a,05ff3213,value,,IGN:3,,,,value,,UIN,10,,
-r,,,YieldDhw,,,,b51a,05ff3216,value,,IGN:3,,,,value,,UIN,,kWh,
-r,,,CopDhw,,,,b51a,05ff3217,value,,IGN:3,,,,value,,UIN,10,,
+r,,,YieldHwcMonth,,,,b51a,05ff3212,value,,IGN:3,,,,value,,UIN,10,kWh,
+r,,,CopHwcMonth,,,,b51a,05ff3213,value,,IGN:3,,,,value,,UIN,10,,
+r,,,YieldHwc,,,,b51a,05ff3216,value,,IGN:3,,,,value,,UIN,,kWh,
+r,,,CopHwc,,,,b51a,05ff3217,value,,IGN:3,,,,value,,UIN,10,,
 r,,,CompressorBlocktime,,,,b51a,05ff321e,value,,IGN:3,,,,value,,UIN,,min,
 r,,,SupplyTempWeighted,,,,b51a,05ff321f,value,,IGN:3,,,,value,,D2C,10,°C,
 r,,,FlowTemp,,,,b51a,05ff3220,value,,IGN:3,,,,value,,D2C,,°C,
