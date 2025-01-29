@@ -155,10 +155,15 @@ namespace Vwzio.Hw5103 {
   @base(MF, 0x1a, 0x6, 0xff, 0x34)
   model w_4 {}
 
-  @inherit(r_4, w_4)
+  @inherit(r_4)
   @ext(0x5c)
   model HwcMode {
     value: hwcmode3;
   }
 
+  @inherit(w_4)
+  @ext(0x5c)
+  model HwcModeWrite {
+    value: hwcmode3;
+  }
 }
