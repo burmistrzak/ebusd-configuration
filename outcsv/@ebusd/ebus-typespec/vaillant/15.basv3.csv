@@ -274,8 +274,8 @@ w,,,Z1HeatingTempDesiredManual,manual heating setpoint zone 1,,,b524,02010300220
 r,,,Z1CoolingTempDesiredManual,manual cooling setpoint zone 1,,,b524,020003002300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1
 w,,,Z1CoolingTempDesiredManual,manual cooling setpoint zone 1,,,b524,020103002300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1
 r,,,Z1QuickVetoEndDate,quick veto end date zone 1,,,b524,020003002400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020003002600,value,,IGN:4,,,,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020103002600,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020003002600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+w,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020103002600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z1RoomHumidity,room humidity zone 1,,,b524,020003002800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020003010100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 2
 w,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020103010100,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 2
@@ -318,8 +318,8 @@ w,,,Z2HeatingTempDesiredManual,manual heating setpoint zone 2,,,b524,02010301220
 r,,,Z2CoolingTempDesiredManual,manual cooling setpoint zone 2,,,b524,020003012300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2
 w,,,Z2CoolingTempDesiredManual,manual cooling setpoint zone 2,,,b524,020103012300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2
 r,,,Z2QuickVetoEndDate,quick veto end date zone 2,,,b524,020003012400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020003012600,value,,IGN:4,,,,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020103012600,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020003012600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+w,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020103012600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z2RoomHumidity,room humidity zone 2,,,b524,020003012800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020003020100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 3
 w,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020103020100,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 3
@@ -362,8 +362,8 @@ w,,,Z3HeatingTempDesiredManual,manual heating setpoint zone 3,,,b524,02010302220
 r,,,Z3CoolingTempDesiredManual,manual cooling setpoint zone 3,,,b524,020003022300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3
 w,,,Z3CoolingTempDesiredManual,manual cooling setpoint zone 3,,,b524,020103022300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3
 r,,,Z3QuickVetoEndDate,quick veto end date zone 3,,,b524,020003022400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020003022600,value,,IGN:4,,,,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,value,,EXP,,,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020003022600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z3RoomHumidity,room humidity zone 3,,,b524,020003022800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,UnknownValue_a0,,,,b555,a0,value,,HEX:8,,,
 r,,,HwcTimer_Config,hwc timer Configuration,,,b555,a30002,value,,HEX:9,,,Configuration
@@ -510,6 +510,3 @@ r,,,Z3CoolingTimer_Saturday,timer cooling saturday read,,,b555,a502010500,ign,,I
 w,,,Z3CoolingTimer_SaturdayWrite,timer cooling saturday write,,,b555,a602010500,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
 r,,,Z3CoolingTimer_Sunday,timer cooling sunday read,,,b555,a502010600,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,slottemp,,UIN,10,,Temperature stored in the slot. Degrees Celsius
 w,,,Z3CoolingTimer_SundayWrite,timer cooling sunday write,,,b555,a602010600,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,Currenterror,Current errors,,,b503,0001,error,,UIN,,,error number,error_1,,UIN,,,error number,error_2,,UIN,,,error number,error_3,,UIN,,,error number,error_4,,UIN,,,error number
-r,,,Errorhistory,Error_History,,,b503,0101,index,m,UCH,,,,status,,UCH,,,Status,time,,VTM,,,time,date,,HDA:3,,,date,error,,UIN,,,error number
-w,,install,Clearerrorhistory,Clear error history,,,b503,0201,cleared,s,UCH,0=no;1=yes,,
