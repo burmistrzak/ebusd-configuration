@@ -7,7 +7,7 @@ r,,,DiagVwzHours,,,,b509,540200b80b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,DiagImmersionHeaterHours,,,,b509,540200bd0b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,DiagImmersionHeaterStarts,,,,b509,540200c00b,value,,IGN:4,,,,value,,UIN,,,start count
 r,,,DiagPrioritySwitchingValveOps,,,,b509,540200c10b,value,,IGN:4,,,,value,,UIN,,,start count
-r,,,VwzPowerConsumption,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
+r,,,PowerConsumptionVwz,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
 r,,,ImmersionHeaterHours,,,,b51a,05ff3246,value,,IGN:3,,,,value,,UIN,,h,hours
 r,,,ImmersionHeaterEnergyUsage,,,,b51a,05ff3249,value,,IGN:3,,,,value,,UIN,,kWh,
 r,,,ImmersionHeaterStarts,,,,b51a,05ff324a,value,,IGN:3,,,,value,,UIN,,,start count
