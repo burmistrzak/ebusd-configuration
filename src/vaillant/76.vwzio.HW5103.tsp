@@ -151,6 +151,7 @@ namespace Vwzio.Hw5103 {
   }
 
   /** default *w */
+  @write
   @base(MF, 0x1a, 0x6, 0xff, 0x34)
   model w_4 {}
 
