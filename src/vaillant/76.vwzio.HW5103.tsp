@@ -81,7 +81,7 @@ namespace Vwzio.Hw5103 {
 
   @inherit(r_2)
   @ext(0x14)
-  model VwzPowerConsumption {
+  model PowerConsumptionVwz {
     @unit("W")
     value: EXP;
   }
