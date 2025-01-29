@@ -40,11 +40,13 @@ namespace Vwzio.Hw5103 {
     value: hoursum2;
   }
 
+/**
   @inherit(r_0)
   @ext(0xb9, 0xb)
   model DiagHcHours {
     value: hoursum2;
   }
+*/
 
   @inherit(r_0)
   @ext(0xbd, 0xb)
@@ -79,7 +81,7 @@ namespace Vwzio.Hw5103 {
 
   @inherit(r_2)
   @ext(0x14)
-  model VwzCurrentPowerConsumption {
+  model VwzPowerConsumption {
     @unit("W")
     value: EXP;
   }
@@ -92,11 +94,13 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
+/**
   @inherit(r_3)
   @ext(0x40)
   model TotalRunningHours {
     value: hoursum2;
   }
+*/
 
   @inherit(r_3)
   @ext(0x46)
@@ -106,7 +110,7 @@ namespace Vwzio.Hw5103 {
 
   @inherit(r_3)
   @ext(0x49)
-  model TotalEnergyUsageImmersionHeater {
+  model ImmersionHeaterEnergyUsage {
     @unit("kWh")
     value: energy;
   }
@@ -137,4 +141,23 @@ namespace Vwzio.Hw5103 {
     @divisor(10)
     value: temps2;
   }
+
+  // B51A FF34xx
+  /** default *r */
+  @base(MF, 0x1a, 0x5, 0xff, 0x34)
+  model r_4 {
+    @maxLength(3)
+    value: IGN;
+  }
+
+  /** default *w */
+  @base(MF, 0x1a, 0x6, 0xff, 0x34)
+  model w_4 {}
+
+  @inherit(r_4, w_4)
+  @ext(0x5c)
+  model HwcMode {
+    value: hwcmode3;
+  }
+
 }

@@ -177,6 +177,10 @@ scalar hwcmode extends UCH;
 @values(Values_hwcmode2)
 scalar hwcmode2 extends UCH;
 
+/** hot water mode */
+@values(Values_hwcmode3)
+scalar hwcmode3 extends UCH;
+
 /** mixer State */
 @values(Values_mixer)
 scalar mixer extends UCH;
@@ -623,6 +627,12 @@ enum Values_hwcmode2 {
   on: 1,
   auto: 2,
   manual: 3,
+}
+
+enum Values_hwcmode3 {
+  eco: 0,
+  normal: 1,
+  balance: 2,
 }
 
 enum Values_mixer {
