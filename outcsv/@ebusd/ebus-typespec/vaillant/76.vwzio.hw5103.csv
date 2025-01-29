@@ -16,4 +16,4 @@ r,,,PrioritySwitchingValveOps,,,,b51a,05ff324b,value,,IGN:3,,,,value,,UIN,,,star
 r,,,ImmersionHeaterPower,,,,b51a,05ff324c,value,,IGN:3,,,,value,,SCH,10,kW,
 r,,,ImmersionHeaterTemp,,,,b51a,05ff325c,value,,IGN:3,,,,value,,SIN,10,°C,temperature
 r,,,HwcMode,,,,b51a,05ff345c,value,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode
-w,,,HwcMode,,,,b51a,06ff345c,value,,UCH,0=eco;1=normal;2=balance,,hot water mode
+w,,,HwcModeWrite,,,,b51a,06ff345c,value,,UCH,0=eco;1=normal;2=balance,,hot water mode
