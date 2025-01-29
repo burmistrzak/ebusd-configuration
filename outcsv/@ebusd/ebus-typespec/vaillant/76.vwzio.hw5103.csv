@@ -4,15 +4,15 @@ r,,,DiagFlowTemp,,,,b509,5402000609,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,DiagSystemPressure,,,,b509,5402007409,value,,IGN:4,,,,value,,EXP,,bar,pressure
 r,,,DiagCondensorOutletTemp,,,,b509,540200b608,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,DiagVwzHours,,,,b509,540200b80b,value,,IGN:4,,,,value,,UIN,,h,hours
-r,,,DiagHcHours,,,,b509,540200b90b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,DiagImmersionHeaterHours,,,,b509,540200bd0b,value,,IGN:4,,,,value,,UIN,,h,hours
 r,,,DiagImmersionHeaterStarts,,,,b509,540200c00b,value,,IGN:4,,,,value,,UIN,,,start count
 r,,,DiagPrioritySwitchingValveOps,,,,b509,540200c10b,value,,IGN:4,,,,value,,UIN,,,start count
-r,,,VwzCurrentPowerConsumption,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
-r,,,TotalRunningHours,,,,b51a,05ff3240,value,,IGN:3,,,,value,,UIN,,h,hours
+r,,,VwzPowerConsumption,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
 r,,,ImmersionHeaterHours,,,,b51a,05ff3246,value,,IGN:3,,,,value,,UIN,,h,hours
-r,,,TotalEnergyUsageImmersionHeater,,,,b51a,05ff3249,value,,IGN:3,,,,value,,UIN,,kWh,
+r,,,ImmersionHeaterEnergyUsage,,,,b51a,05ff3249,value,,IGN:3,,,,value,,UIN,,kWh,
 r,,,ImmersionHeaterStarts,,,,b51a,05ff324a,value,,IGN:3,,,,value,,UIN,,,start count
 r,,,PrioritySwitchingValveOps,,,,b51a,05ff324b,value,,IGN:3,,,,value,,UIN,,,start count
 r,,,ImmersionHeaterPower,,,,b51a,05ff324c,value,,IGN:3,,,,value,,SCH,10,kW,
 r,,,ImmersionHeaterTemp,,,,b51a,05ff325c,value,,IGN:3,,,,value,,SIN,10,°C,temperature
+r,,,HwcMode,,,,b51a,05ff345c,value,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,hot water mode
+r,,,HwcMode,,,,b51a,06ff345c,value,,UCH,0=eco;1=normal;2=balance,,hot water mode
