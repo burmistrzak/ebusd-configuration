@@ -1,67 +1,67 @@
 type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
 *r,
 *w,
-r,,,HwcBivalencePoint,Hwc bivalence point,,,b524,020000000100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,value,,EXP,,°C,temperature
-r,,,ContinuosHeating,continuos heating,,,b524,020000000200,value,,IGN:4,,,,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
-w,,install,ContinuosHeating,continuos heating,,,b524,020100000200,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
-r,,,FrostOverrideTime,frost delay time,,,b524,020000000300,value,,IGN:4,,,,value,,UIN,,h,Delay before frost protection is activated
+r,,,HwcBivalencePoint,Hwc bivalence point,,,b524,020000000100,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:-20],max,,EXP,,°C,[max:50],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:-7]
+w,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,tempv,,EXP,,°C,temperature
+r,,,ContinuosHeating,continuos heating,,,b524,020000000200,value,,IGN:4,,,,tempv,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)",min,,EXP,,°C,[min:-26],max,,EXP,,°C,[max:10],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:-26]
+w,,install,ContinuosHeating,continuos heating,,,b524,020100000200,tempv,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
+r,,install,FrostOverrideTime,frost delay time,,,b524,020000000300,value,,IGN:4,,,,value,,UIN,,h,Delay before frost protection is activated
 w,,install,FrostOverrideTime,frost delay time,,,b524,020100000300,value,,UIN,,h,Delay before frost protection is activated
 r,,,GlobalSystemOff,Global System OFF,,,b524,020000000700,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,For switching system off
 w,,,GlobalSystemOff,Global System OFF,,,b524,020100000700,value,,UCH,0=no;1=yes,,For switching system off
-r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,install,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
+r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,onoff,,UCH,0=off;1=on,,,default,,UCH,0=off;1=on,,[default:0]
+w,,install,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,onoff,,UCH,0=off;1=on,,
 r,,,MaxRoomHumidity,max room humidity,,,b524,020000000e00,value,,IGN:4,,,,value,,UIN,,,Maximum room humidity
 w,,install,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,Maximum room humidity
-r,,install,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,value,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
-w,,install,HybridManager,hybrid manager,,,b524,020100000f00,value,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
+r,,install,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,hmmode,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based),default,,UCH,0=trivalence;1=bivalence,,[default:1]
+w,,install,HybridManager,hybrid manager,,,b524,020100000f00,hmmode,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
 r,,install,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,Secondary heater tariff value
-r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
-w,,install,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
-r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,install,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
-r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,install,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
+r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,yesno,,UCH,0=no;1=yes,,Automatic correction of configured heat curve,default,,UCH,0=no;1=yes,,[default:0]
+w,,install,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,yesno,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
+r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,minutes2,,UIN,,min,19=No limit,min,,UIN,,min,[min:19],max,,UIN,,min,[max:120],step,,UIN,,min,[step:1],default,,UIN,,min,[default:60 or 90]
+w,,install,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,minutes2,,UIN,,min,19=No limit
+r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,minutes2,,UIN,,min,minutes,min,,UIN,,min,[min:0],max,,UIN,,min,[max:120],step,,UIN,,min,[step:1],default,,UIN,,min,[default:60]
+w,,install,HwcLockTime,hwc lock time,,,b524,020100001800,minutes2,,UIN,,min,minutes
 r,,,PumpAdditionalTime,pump additional time,,,b524,020000001b00,value,,IGN:4,,,,value,,UIN,,min,Additional time the pump is running
 w,,install,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,Additional time the pump is running
-r,,,HcAlternativePoint,hc alternative point,,,b524,020000002200,value,,IGN:4,,,,value,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
-w,,install,HcAlternativePoint,hc alternative point,,,b524,020100002200,value,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
-r,,,HcBivalencePoint,hc bivalence point,,,b524,020000002300,value,,IGN:4,,,,value,,EXP,,°C,Bivalence point heating
-w,,install,HcBivalencePoint,hc bivalence point,,,b524,020100002300,value,,EXP,,°C,Bivalence point heating
-r,,,BackupBoiler,backup boiler,,,b524,020000002400,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
-w,,install,BackupBoiler,backup boiler,,,b524,020100002400,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
-r,,,HcEmergencyTemperature,hc emergency temperature,,,b524,020000002600,value,,IGN:4,,,,value,,EXP,,°C,Emergency operation temperature
-w,,install,HcEmergencyTemperature,hc emergency temperature,,,b524,020100002600,value,,EXP,,°C,Emergency operation temperature
-r,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,value,,IGN:4,,,,value,,EXP,,K,Hysteresis cylinder charge
-w,,install,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,Hysteresis cylinder charge
-r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IGN:4,,,,value,,EXP,,K,
-w,,install,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
+r,,,HcAlternativePoint,hc alternative point,,,b524,020000002200,value,,IGN:4,,,,tempv,,EXP,,°C,exclusively alternate heating below alternative point (-21=off),min,,EXP,,°C,[min:-21],max,,EXP,,°C,[max:40],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:-21]
+w,,install,HcAlternativePoint,hc alternative point,,,b524,020100002200,tempv,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
+r,,,HcBivalencePoint,hc bivalence point,,,b524,020000002300,value,,IGN:4,,,,tempv,,EXP,,°C,Bivalence point heating,min,,EXP,,°C,[min:-20],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:-5]
+w,,install,HcBivalencePoint,hc bivalence point,,,b524,020100002300,tempv,,EXP,,°C,Bivalence point heating
+r,,,BackupBoiler,backup boiler,,,b524,020000002400,value,,IGN:4,,,,backmode2,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc),default,,UCH,0=off;1=heat;2=water;3=heatandwater,,[default:3]
+w,,install,BackupBoiler,backup boiler,,,b524,020100002400,backmode2,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
+r,,,HcEmergencyTemperature,hc emergency temperature,,,b524,020000002600,value,,IGN:4,,,,tempv,,EXP,,°C,Emergency operation temperature,min,,EXP,,°C,[min:20],max,,EXP,,°C,[max:80],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:25]
+w,,install,HcEmergencyTemperature,hc emergency temperature,,,b524,020100002600,tempv,,EXP,,°C,Emergency operation temperature
+r,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,value,,IGN:4,,,,calibrationv,,EXP,,K,Hysteresis cylinder charge,min,,EXP,,K,[min:3],max,,EXP,,K,[max:20],step,,EXP,,K,[step:0.5],default,,EXP,,K,[default:5 or 7]
+w,,install,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,calibrationv,,EXP,,K,Hysteresis cylinder charge
+r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:0],max,,EXP,,K,[max:40],step,,EXP,,K,[step:1],default,,EXP,,K,[default:25 or 10]
+w,,install,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,calibrationv,,EXP,,K,
 r,,,HwcLegionellaTime,hwc legionella time,,,b524,020000002a00,value,,IGN:4,,,,value,,HTM,,,
 w,,install,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
 r,,,HwcLegionellaDay,ohwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
 w,,install,HwcLegionellaDay,ohwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
 r,,,MaintenanceDate,next maintenance,,,b524,020000002c00,value,,IGN:4,,,,value,,HDA:3,,,Date for next maintenance
 w,,install,MaintenanceDate,next maintenance,,,b524,020100002c00,value,,HDA:3,,,Date for next maintenance
-r,,,OffsetOutsideTemp,offset outside temperature,,,b524,020000002d00,value,,IGN:4,,,,value,,EXP,,K,
-w,,,OffsetOutsideTemp,offset outside temperature,,,b524,020100002d00,value,,EXP,,K,
+r,,,OffsetOutsideTemp,offset outside temperature,,,b524,020000002d00,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:-3],max,,EXP,,K,[max:3],step,,EXP,,K,[step:0.5],default,,EXP,,K,[default:0]
+w,,,OffsetOutsideTemp,offset outside temperature,,,b524,020100002d00,calibrationv,,EXP,,K,
 r,,,Date,date,,,b524,020000003400,value,,IGN:4,,,,value,,HDA:3,,,Current date
 r,,,Time,time,,,b524,020000003500,value,,IGN:4,,,,value,,HTI,,,Current time
 r,,,HydraulicScheme,hydraulic scheme,,,b524,020000003600,value,,IGN:4,,,,value,,UIN,,,
 w,,install,HydraulicScheme,hydraulic scheme,,,b524,020100003600,value,,UIN,,,
-r,,,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020000003800,value,,IGN:4,,,,value,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
-w,,install,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020100003800,value,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
+r,,,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020000003800,value,,IGN:4,,,,tempv,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold,min,,EXP,,°C,[min:10],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:15]
+w,,install,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020100003800,tempv,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
 r,,,WaterPressure,water pressure,,,b524,020000003900,value,,IGN:4,,,,value,,EXP,,bar,pressure
-r,,,DewPointOffset,dew point offset,,,b524,020000003a00,value,,IGN:4,,,,value,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
-w,,install,DewPointOffset,dew point offset,,,b524,020100003a00,value,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
+r,,,DewPointOffset,dew point offset,,,b524,020000003a00,value,,IGN:4,,,,tempv,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point,min,,EXP,,°C,[min:-10],max,,EXP,,°C,[max:10],step,,EXP,,°C,[step:1]
+w,,install,DewPointOffset,dew point offset,,,b524,020100003a00,tempv,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
 r,,,SolarYieldTotal,total solar yield,,,b524,020000003d00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,EnvYieldTotal,total environmental yield,,,b524,020000003e00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,ESCO,esco block function,,,b524,020000004500,value,,IGN:4,,,,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
 w,,,ESCO,esco block function,,,b524,020100004500,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
-r,,,HwcFlowTempMax,hwc max flow temp,,,b524,020000004600,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint of Hwc
-w,,install,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,Maximum flow temperature setpoint of Hwc
+r,,,HwcFlowTempMax,hwc max flow temp,,,b524,020000004600,value,,IGN:4,,,,tempv,,EXP,,°C,Maximum flow temperature setpoint of Hwc,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:80],step,,EXP,,°C,[step:1]
+w,,install,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,tempv,,EXP,,°C,Maximum flow temperature setpoint of Hwc
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,install,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
+r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,mamode,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,,default,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,[default:0]
+w,,install,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,mamode,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
 r,,,PrFuelSumHcThisMonth,this month's fuel consumption heating,,,b524,020000004e00,value,,IGN:4,,,,value,,ULG,,kWh,This month's fuel consumption for heating
 r,,,PrEnergySumHcThisMonth,this month's energy consumption heating,,,b524,020000004f00,value,,IGN:4,,,,value,,ULG,,kWh,This month's energy consumption for heating
 r,,,PrEnergySumHwcThisMonth,this month's energy consumption hot water,,,b524,020000005000,value,,IGN:4,,,,value,,ULG,,kWh,This month's energy consumption for hot water
@@ -83,8 +83,8 @@ w,,install,PhoneNumber1,phone number 1 (first part),,,b524,020100006f00,value,,S
 r,,,PhoneNumber2,phone number 2 (second part),,,b524,020000007000,value,,IGN:4,,,,value,,STR:6,,,Installer's telephone number
 w,,install,PhoneNumber2,phone number 2 (second part),,,b524,020100007000,value,,STR:6,,,Installer's telephone number
 r,,,OutsideTemp,outside temperature,,,b524,020000007300,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020000007600,value,,IGN:4,,,,value,,UIN,,,000-999; code for the installer's menues
-w,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020100007600,value,,UIN,,,000-999; code for the installer's menues
+r,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020000007600,value,,IGN:4,,,,uin,,UIN,,,000-999; code for the installer's menues,min,,UIN,,,[min:0],max,,UIN,,,[max:999],step,,UIN,,,[step:1],default,,UIN,,,[default:0]
+w,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020100007600,uin,,UIN,,,000-999; code for the installer's menues
 r,,,OutsideTempAvg,average outside temperature,,,b524,020000009500,value,,IGN:4,,,,value,,EXP,,°C,Average outside temperature (updated every 3h)
 r,,,MaintenanceDue,maintenance due,,,b524,020000009600,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 r,,,GreenIQ,green iq,,,b524,020000009a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
@@ -92,15 +92,15 @@ r,,,HwcCylinderTempTop,hwc cylinder temperature top,,,b524,020000009d00,value,,I
 r,,,HwcCylinderTempBottom,hwc cylinder temperature bottom,,,b524,020000009e00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,HcCylinderTempTop,hc cylinder temperature top,,,b524,020000009f00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,HcCylinderTempBottom,hc cylinder temperature bottom,,,b524,02000000a000,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,BufferChargeOffset,offset buffer charge,,,b524,02000000a200,value,,IGN:4,,,,value,,EXP,,K,
-w,,,BufferChargeOffset,offset buffer charge,,,b524,02010000a200,value,,EXP,,K,
+r,,,BufferChargeOffset,offset buffer charge,,,b524,02000000a200,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:0],max,,EXP,,K,[max:15],step,,EXP,,K,[step:1],default,,EXP,,K,[default:10]
+w,,,BufferChargeOffset,offset buffer charge,,,b524,02010000a200,calibrationv,,EXP,,K,
 r,,,HwcEnabled,hwc enabled,,,b524,020001000100,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,HwcEnabled,hwc enabled,,,b524,020101000100,value,,UCH,0=no;1=yes,,
 r,,,HwcCircPumpStatus,hwc circulation pump status,,,b524,020001000200,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,HwcOpMode,hwc operation mode,,,b524,020001000300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of Hwc
 w,,,HwcOpMode,hwc operation mode,,,b524,020101000300,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of Hwc
-r,,,HwcTempDesired,hwc temperature desired,,,b524,020001000400,value,,IGN:4,,,,value,,EXP,,°C,Setpoint of domestic hot water circuit
-w,,,HwcTempDesired,hwc temperature desired,,,b524,020101000400,value,,EXP,,°C,Setpoint of domestic hot water circuit
+r,,,HwcSetpointTemp,hwc temperature desired,,,b524,020001000400,value,,IGN:4,,,,tempv,,EXP,,°C,Setpoint of domestic hot water circuit,min,,EXP,,°C,[min:35],max,,EXP,,°C,[max:70],step,,EXP,,°C,[step:1]
+w,,,HwcSetpointTemp,hwc temperature desired,,,b524,020101000400,tempv,,EXP,,°C,Setpoint of domestic hot water circuit
 r,,,HwcCylinderTemp,hwc cylinder temperature,,,b524,020001000500,value,,IGN:4,,,,value,,EXP,,°C,Hwc cylinder temperature
 r,,,HwcReheatingActive,hwc reheating active,,,b524,020001000600,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 r,,,HwcFlowTempTarget,hwc flow temperature,,,b524,020001000800,value,,IGN:4,,,,value,,EXP,,°C,Desired flow temp for Hwc
@@ -116,8 +116,8 @@ w,,,HwcHolidayStartTime,hwc holiday start time,,,b524,020101001000,value,,HTI,,,
 r,,,HwcHolidayEndTime,hwc holiday end time,,,b524,020001001100,value,,IGN:4,,,,value,,HTI,,,
 w,,,HwcHolidayEndTime,hwc holiday end time,,,b524,020101001100,value,,HTI,,,
 r,,,Hc1CircuitType,CircuitType heating circuit 1,,,b524,020002000200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
-r,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020002000400,value,,IGN:4,,,,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
-w,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020102000400,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
+r,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020002000400,value,,IGN:4,,,,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30),min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:80],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:30]
+w,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020102000400,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30)
 r,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020002000500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020102000500,value,,UCH,0=off;1=on,,
 r,,,Hc1CoolingEnabled,CoolingEnabled heating circuit 1,,,b524,020002000600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
@@ -126,30 +126,30 @@ r,,,Hc1FlowTempTarget,ActualFlowTempDesired heating circuit 1,,,b524,02000200070
 r,,,Hc1FlowTemp,FlowTemp heating circuit 1,,,b524,020002000800,value,,IGN:4,,,,value,,EXP,,°C,Current flow temperature of Hc1
 r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,Desired external Hwc temperature
 w,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020102000900,value,,EXP,,°C,Desired external Hwc temperature
-r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,value,,EXP,,K,
-w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,value,,EXP,,K,
-r,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020002000b00,value,,IGN:4,,,,value,,EXP,,K,Excess temperature of Hc1 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-w,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020102000b00,value,,EXP,,K,Excess temperature of Hc1 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-r,,,Hc1FixedDesiredTemp,DesiredTemp heating circuit 1,,,b524,020002000c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc1FixedDesiredTemp,DesiredTemp heating circuit 1,,,b524,020102000c00,value,,EXP,,°C,temperature
-r,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020002000d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020102000d00,value,,EXP,,°C,temperature
-r,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020002000e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,Operation of Hc1 during the lowering time; no influence if room temperature modulation is set to expanded
-w,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020102000e00,value,,UIN,0=eco;1=normal,,Operation of Hc1 during the lowering time; no influence if room temperature modulation is set to expanded
-r,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020002000f00,value,,IGN:4,,,,value,,EXP,,,
-w,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020102000f00,value,,EXP,,,
-r,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020002001000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1
-w,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020102001000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1
-r,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020002001100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020102001100,value,,EXP,,°C,temperature
-r,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020002001200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1
-w,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020102001200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1
+r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:-10],max,,EXP,,K,[max:10],step,,EXP,,K,[step:1],default,,EXP,,K,[default:2]
+w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,calibrationv,,EXP,,K,
+r,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020002000b00,value,,IGN:4,,,,calibrationv,,EXP,,K,Excess temperature of Hc1 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range),min,,EXP,,K,[min:0],max,,EXP,,K,[max:20],step,,EXP,,K,[step:1]
+w,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020102000b00,calibrationv,,EXP,,K,Excess temperature of Hc1 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
+r,,,Hc1FixedSetpointTemp,DesiredTemp heating circuit 1,,,b524,020002000c00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:65]
+w,,,Hc1FixedSetpointTemp,DesiredTemp heating circuit 1,,,b524,020102000c00,tempv,,EXP,,°C,temperature
+r,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020002000d00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:0],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:0]
+w,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020102000d00,tempv,,EXP,,°C,temperature
+r,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020002000e00,value,,IGN:4,,,,offmode2,,UIN,0=eco;1=normal,,Operation of Hc1 during the lowering time; no influence if room temperature modulation is set to expanded,default,,UIN,0=eco;1=normal,,[default:0]
+w,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020102000e00,offmode2,,UIN,0=eco;1=normal,,Operation of Hc1 during the lowering time; no influence if room temperature modulation is set to expanded
+r,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020002000f00,value,,IGN:4,,,,exp,,EXP,,,,min,,EXP,,,[min:0.1],max,,EXP,,,[max:4],step,,EXP,,,[step:0.05],default,,EXP,,,[default:1.2 or 0.6]
+w,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020102000f00,exp,,EXP,,,
+r,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020002001000,value,,IGN:4,,,,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:90 or 55]
+w,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020102001000,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1
+r,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020002001100,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:7],max,,EXP,,°C,[max:24],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:20]
+w,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020102001100,tempv,,EXP,,°C,temperature
+r,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020002001200,value,,IGN:4,,,,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:15]
+w,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020102001200,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1
 r,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020002001300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 w,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020102001300,value,,UIN,0=off;1=time_controlled;2=manual,,
-r,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020002001400,value,,IGN:4,,,,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-w,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020102001400,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc1
-w,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020102001500,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc1
+r,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020002001400,value,,IGN:4,,,,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint,min,,EXP,,°C,[min:10],max,,EXP,,°C,[max:99],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:21 or 16]
+w,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020102001400,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
+r,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc1,default,,UIN,0=inactive;1=active;2=expanded,,[default:0]
+w,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020102001500,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc1
 r,,,Hc1ExtHwcActive,ExtHwcActive heating circuit 1,,,b524,020002001800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc1ExtHeatDemand,ExtHeatDemand heating circuit 1,,,b524,020002001900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc1MixerMovement,MixerMovement heating circuit 1,,,b524,020002001a00,value,,IGN:4,,,,value,,EXP,,,"Status of mixer (<0 closing, >0 opening)"
@@ -158,8 +158,8 @@ r,,,Hc1Status,Status heating circuit 1,,,b524,020002001b00,value,,IGN:4,,,,value
 w,,,Hc1Status,Status heating circuit 1,,,b524,020102001b00,value,,UCH,0=off;1=on,,
 r,,,Hc1PumpStatus,PumpStatus heating circuit 1,,,b524,020002001e00,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=cool;3=exthwc,,hc pump mode
 r,,,Hc2CircuitType,CircuitType heating circuit 2,,,b524,020002010200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
-r,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020002010400,value,,IGN:4,,,,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
-w,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020102010400,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
+r,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020002010400,value,,IGN:4,,,,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30),min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:80],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:30]
+w,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020102010400,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30)
 r,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020002010500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020102010500,value,,UCH,0=off;1=on,,
 r,,,Hc2CoolingEnabled,CoolingEnabled heating circuit 2,,,b524,020002010600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
@@ -168,30 +168,30 @@ r,,,Hc2FlowTempTarget,ActualFlowTempDesired heating circuit 2,,,b524,02000201070
 r,,,Hc2FlowTemp,FlowTemp heating circuit 2,,,b524,020002010800,value,,IGN:4,,,,value,,EXP,,°C,Current flow temperature of Hc2
 r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,Desired external Hwc temperature
 w,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020102010900,value,,EXP,,°C,Desired external Hwc temperature
-r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,value,,EXP,,K,
-w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,value,,EXP,,K,
-r,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020002010b00,value,,IGN:4,,,,value,,EXP,,K,Excess temperature of Hc2 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-w,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020102010b00,value,,EXP,,K,Excess temperature of Hc2 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-r,,,Hc2FixedDesiredTemp,DesiredTemp heating circuit 2,,,b524,020002010c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc2FixedDesiredTemp,DesiredTemp heating circuit 2,,,b524,020102010c00,value,,EXP,,°C,temperature
-r,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020002010d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020102010d00,value,,EXP,,°C,temperature
-r,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020002010e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,Operation of Hc2 during the lowering time; no influence if room temperature modulation is set to expanded
-w,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020102010e00,value,,UIN,0=eco;1=normal,,Operation of Hc2 during the lowering time; no influence if room temperature modulation is set to expanded
-r,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020002010f00,value,,IGN:4,,,,value,,EXP,,,
-w,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020102010f00,value,,EXP,,,
-r,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020002011000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2
-w,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020102011000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2
-r,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020002011100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020102011100,value,,EXP,,°C,temperature
-r,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020002011200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2
-w,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020102011200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2
+r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:-10],max,,EXP,,K,[max:10],step,,EXP,,K,[step:1],default,,EXP,,K,[default:2]
+w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,calibrationv,,EXP,,K,
+r,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020002010b00,value,,IGN:4,,,,calibrationv,,EXP,,K,Excess temperature of Hc2 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range),min,,EXP,,K,[min:0],max,,EXP,,K,[max:20],step,,EXP,,K,[step:1]
+w,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020102010b00,calibrationv,,EXP,,K,Excess temperature of Hc2 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
+r,,,Hc2FixedSetpointTemp,DesiredTemp heating circuit 2,,,b524,020002010c00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:65]
+w,,,Hc2FixedSetpointTemp,DesiredTemp heating circuit 2,,,b524,020102010c00,tempv,,EXP,,°C,temperature
+r,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020002010d00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:0],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:0]
+w,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020102010d00,tempv,,EXP,,°C,temperature
+r,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020002010e00,value,,IGN:4,,,,offmode2,,UIN,0=eco;1=normal,,Operation of Hc2 during the lowering time; no influence if room temperature modulation is set to expanded,default,,UIN,0=eco;1=normal,,[default:0]
+w,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020102010e00,offmode2,,UIN,0=eco;1=normal,,Operation of Hc2 during the lowering time; no influence if room temperature modulation is set to expanded
+r,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020002010f00,value,,IGN:4,,,,exp,,EXP,,,,min,,EXP,,,[min:0.1],max,,EXP,,,[max:4],step,,EXP,,,[step:0.05],default,,EXP,,,[default:1.2 or 0.6]
+w,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020102010f00,exp,,EXP,,,
+r,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020002011000,value,,IGN:4,,,,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:90 or 55]
+w,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020102011000,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2
+r,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020002011100,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:7],max,,EXP,,°C,[max:24],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:20]
+w,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020102011100,tempv,,EXP,,°C,temperature
+r,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020002011200,value,,IGN:4,,,,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:15]
+w,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020102011200,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2
 r,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020002011300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 w,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020102011300,value,,UIN,0=off;1=time_controlled;2=manual,,
-r,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020002011400,value,,IGN:4,,,,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-w,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020102011400,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc2
-w,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020102011500,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc2
+r,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020002011400,value,,IGN:4,,,,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint,min,,EXP,,°C,[min:10],max,,EXP,,°C,[max:99],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:21 or 16]
+w,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020102011400,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
+r,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc2,default,,UIN,0=inactive;1=active;2=expanded,,[default:0]
+w,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020102011500,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc2
 r,,,Hc2ExtHwcActive,ExtHwcActive heating circuit 2,,,b524,020002011800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc2ExtHeatDemand,ExtHeatDemand heating circuit 2,,,b524,020002011900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc2MixerMovement,MixerMovement heating circuit 2,,,b524,020002011a00,value,,IGN:4,,,,value,,EXP,,,"Status of mixer (<0 closing, >0 opening)"
@@ -200,8 +200,8 @@ r,,,Hc2Status,Status heating circuit 2,,,b524,020002011b00,value,,IGN:4,,,,value
 w,,,Hc2Status,Status heating circuit 2,,,b524,020102011b00,value,,UCH,0=off;1=on,,
 r,,,Hc2PumpStatus,PumpStatus heating circuit 2,,,b524,020002011e00,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=cool;3=exthwc,,hc pump mode
 r,,,Hc3CircuitType,CircuitType heating circuit 3,,,b524,020002020200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
-r,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020002020400,value,,IGN:4,,,,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
-w,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020102020400,value,,EXP,,°C,Temperature for the increase in return circuit (default 30)
+r,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020002020400,value,,IGN:4,,,,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30),min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:80],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:30]
+w,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020102020400,tempv,,EXP,,°C,Temperature for the increase in return circuit (default 30)
 r,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020002020500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020102020500,value,,UCH,0=off;1=on,,
 r,,,Hc3CoolingEnabled,CoolingEnabled heating circuit 3,,,b524,020002020600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
@@ -210,30 +210,30 @@ r,,,Hc3FlowTempTarget,ActualFlowTempDesired heating circuit 3,,,b524,02000202070
 r,,,Hc3FlowTemp,FlowTemp heating circuit 3,,,b524,020002020800,value,,IGN:4,,,,value,,EXP,,°C,Current flow temperature of Hc3
 r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,Desired external Hwc temperature
 w,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020102020900,value,,EXP,,°C,Desired external Hwc temperature
-r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,value,,EXP,,K,
-w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,value,,EXP,,K,
-r,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020002020b00,value,,IGN:4,,,,value,,EXP,,K,Excess temperature of Hc3 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-w,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020102020b00,value,,EXP,,K,Excess temperature of Hc3 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
-r,,,Hc3FixedDesiredTemp,DesiredTemp heating circuit 3,,,b524,020002020c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc3FixedDesiredTemp,DesiredTemp heating circuit 3,,,b524,020102020c00,value,,EXP,,°C,temperature
-r,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020002020d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020102020d00,value,,EXP,,°C,temperature
-r,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020002020e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,Operation of Hc3 during the lowering time; no influence if room temperature modulation is set to expanded
-w,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020102020e00,value,,UIN,0=eco;1=normal,,Operation of Hc3 during the lowering time; no influence if room temperature modulation is set to expanded
-r,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020002020f00,value,,IGN:4,,,,value,,EXP,,,
-w,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020102020f00,value,,EXP,,,
-r,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020002021000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3
-w,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020102021000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3
-r,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020002021100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020102021100,value,,EXP,,°C,temperature
-r,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020002021200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3
-w,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020102021200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3
+r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,calibrationv,,EXP,,K,,min,,EXP,,K,[min:-10],max,,EXP,,K,[max:10],step,,EXP,,K,[step:1],default,,EXP,,K,[default:2]
+w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,calibrationv,,EXP,,K,
+r,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020002020b00,value,,IGN:4,,,,calibrationv,,EXP,,K,Excess temperature of Hc3 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range),min,,EXP,,K,[min:0],max,,EXP,,K,[max:20],step,,EXP,,K,[step:1]
+w,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020102020b00,calibrationv,,EXP,,K,Excess temperature of Hc3 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range)
+r,,,Hc3FixedSetpointTemp,DesiredTemp heating circuit 3,,,b524,020002020c00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:65]
+w,,,Hc3FixedSetpointTemp,DesiredTemp heating circuit 3,,,b524,020102020c00,tempv,,EXP,,°C,temperature
+r,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020002020d00,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:0],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:0]
+w,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020102020d00,tempv,,EXP,,°C,temperature
+r,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020002020e00,value,,IGN:4,,,,offmode2,,UIN,0=eco;1=normal,,Operation of Hc3 during the lowering time; no influence if room temperature modulation is set to expanded,default,,UIN,0=eco;1=normal,,[default:0]
+w,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020102020e00,offmode2,,UIN,0=eco;1=normal,,Operation of Hc3 during the lowering time; no influence if room temperature modulation is set to expanded
+r,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020002020f00,value,,IGN:4,,,,exp,,EXP,,,,min,,EXP,,,[min:0.1],max,,EXP,,,[max:4],step,,EXP,,,[step:0.05],default,,EXP,,,[default:1.2 or 0.6]
+w,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020102020f00,exp,,EXP,,,
+r,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020002021000,value,,IGN:4,,,,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:90 or 55]
+w,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020102021000,tempv,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3
+r,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020002021100,value,,IGN:4,,,,tempv,,EXP,,°C,temperature,min,,EXP,,°C,[min:7],max,,EXP,,°C,[max:24],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:20]
+w,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020102021100,tempv,,EXP,,°C,temperature
+r,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020002021200,value,,IGN:4,,,,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3,min,,EXP,,°C,[min:15],max,,EXP,,°C,[max:90],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:15]
+w,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020102021200,tempv,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3
 r,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020002021300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 w,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020102021300,value,,UIN,0=off;1=time_controlled;2=manual,,
-r,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020002021400,value,,IGN:4,,,,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-w,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020102021400,value,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
-r,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc3
-w,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020102021500,value,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc3
+r,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020002021400,value,,IGN:4,,,,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint,min,,EXP,,°C,[min:10],max,,EXP,,°C,[max:99],step,,EXP,,°C,[step:1],default,,EXP,,°C,[default:21 or 16]
+w,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020102021400,tempv,,EXP,,°C,If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint
+r,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc3,default,,UIN,0=inactive;1=active;2=expanded,,[default:0]
+w,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020102021500,rcmode2,,UIN,0=inactive;1=active;2=expanded,,Room temperature modulation of Hc3
 r,,,Hc3ExtHwcActive,ExtHwcActive heating circuit 3,,,b524,020002021800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc3ExtHeatDemand,ExtHeatDemand heating circuit 3,,,b524,020002021900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc3MixerMovement,MixerMovement heating circuit 3,,,b524,020002021a00,value,,IGN:4,,,,value,,EXP,,,"Status of mixer (<0 closing, >0 opening)"
@@ -243,20 +243,20 @@ w,,,Hc3Status,Status heating circuit 3,,,b524,020102021b00,value,,UCH,0=off;1=on
 r,,,Hc3PumpStatus,PumpStatus heating circuit 3,,,b524,020002021e00,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=cool;3=exthwc,,hc pump mode
 r,,,Z1CoolingOpMode,cooling operation mode zone 1,,,b524,020003000100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 1
 w,,,Z1CoolingOpMode,cooling operation mode zone 1,,,b524,020103000100,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 1
-r,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020003000200,value,,IGN:4,,,,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 1
-w,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020103000200,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 1
+r,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020003000200,value,,IGN:4,,,,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 1,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020103000200,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 1
 r,,,Z1HolidayStartPeriod,holiday period start zone 1,,,b524,020003000300,value,,IGN:4,,,,value,,HDA:3,,,Start date of holidays for zone 1
 w,,,Z1HolidayStartPeriod,holiday period start zone 1,,,b524,020103000300,value,,HDA:3,,,Start date of holidays for zone 1
 r,,,Z1HolidayEndPeriod,holiday period end zone 1,,,b524,020003000400,value,,IGN:4,,,,value,,HDA:3,,,End date of holidays for zone 1
 w,,,Z1HolidayEndPeriod,holiday period end zone 1,,,b524,020103000400,value,,HDA:3,,,End date of holidays for zone 1
-r,,,Z1HolidayTemp,room setpoint holiday period zone 1,,,b524,020003000500,value,,IGN:4,,,,value,,EXP,,°C,Holiday setpoint for zone 1
-w,,,Z1HolidayTemp,room setpoint holiday period zone 1,,,b524,020103000500,value,,EXP,,°C,Holiday setpoint for zone 1
+r,,,Z1HolidayTemp,room setpoint holiday period zone 1,,,b524,020003000500,value,,IGN:4,,,,tempv,,EXP,,°C,Holiday setpoint for zone 1,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5],default,,EXP,,°C,[default:15]
+w,,,Z1HolidayTemp,room setpoint holiday period zone 1,,,b524,020103000500,tempv,,EXP,,°C,Holiday setpoint for zone 1
 r,,,Z1HeatingOpMode,heating operation mode zone 1,,,b524,020003000600,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 1
 w,,,Z1HeatingOpMode,heating operation mode zone 1,,,b524,020103000600,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 1
-r,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020003000800,value,,IGN:4,,,,value,,EXP,,°C,Manual override setpoint for zone 1
-w,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020103000800,value,,EXP,,°C,Manual override setpoint for zone 1
-r,,,Z1HeatingSetbackTemp,set back temperature zone 1,,,b524,020003000900,value,,IGN:4,,,,value,,EXP,,°C,Set back temperature zone 1 (time controlled heating)
-w,,,Z1HeatingSetbackTemp,set back temperature zone 1,,,b524,020103000900,value,,EXP,,°C,Set back temperature zone 1 (time controlled heating)
+r,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020003000800,value,,IGN:4,,,,tempv,,EXP,,°C,Manual override setpoint for zone 1,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z1QuickVetoTemp,quick veto temperature zone 1,,,b524,020103000800,tempv,,EXP,,°C,Manual override setpoint for zone 1
+r,,,Z1HeatingSetbackTemp,set back temperature zone 1,,,b524,020003000900,value,,IGN:4,,,,tempv,,EXP,,°C,Set back temperature zone 1 (time controlled heating),min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z1HeatingSetbackTemp,set back temperature zone 1,,,b524,020103000900,tempv,,EXP,,°C,Set back temperature zone 1 (time controlled heating)
 r,,,Z1SFMode,Special Function (SF) mode zone 1,,,b524,020003000e00,value,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;3=veto,,
 w,,,Z1SFMode,Special Function (SF) mode zone 1,,,b524,020103000e00,value,,UCH,0=auto;1=ventilation;3=veto,,
 r,,,Z1RoomTemp,room temperature zone 1,,,b524,020003000f00,value,,IGN:4,,,,value,,EXP,,°C,Current room temperature in zone 1
@@ -277,30 +277,30 @@ r,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020003002000,value,,
 w,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020103002000,value,,HTI,,,
 r,,,Z1HolidayStartTime,start time of holidays for zone 1,,,b524,020003002100,value,,IGN:4,,,,value,,HTI,,,
 w,,,Z1HolidayStartTime,start time of holidays for zone 1,,,b524,020103002100,value,,HTI,,,
-r,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020003002200,value,,IGN:4,,,,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 1
-w,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020103002200,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 1
-r,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020003002300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1
-w,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020103002300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1
+r,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020003002200,value,,IGN:4,,,,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 1,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020103002200,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 1
+r,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020003002300,value,,IGN:4,,,,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020103002300,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 1
 r,,,Z1QuickVetoEndDate,quick veto end date zone 1,,,b524,020003002400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020003002600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020103002600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020003002600,value,,IGN:4,,,,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode,min,,EXP,,,[min:0.5],max,,EXP,,,[max:12],step,,EXP,,,[step:0.5],default,,EXP,,,[default:3]
+w,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020103002600,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z1RoomHumidity,room humidity zone 1,,,b524,020003002800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020003010100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 2
 w,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020103010100,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 2
-r,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020003010200,value,,IGN:4,,,,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 2
-w,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020103010200,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 2
+r,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020003010200,value,,IGN:4,,,,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 2,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020103010200,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 2
 r,,,Z2HolidayStartPeriod,holiday period start zone 2,,,b524,020003010300,value,,IGN:4,,,,value,,HDA:3,,,Start date of holidays for zone 2
 w,,,Z2HolidayStartPeriod,holiday period start zone 2,,,b524,020103010300,value,,HDA:3,,,Start date of holidays for zone 2
 r,,,Z2HolidayEndPeriod,holiday period end zone 2,,,b524,020003010400,value,,IGN:4,,,,value,,HDA:3,,,End date of holidays for zone 2
 w,,,Z2HolidayEndPeriod,holiday period end zone 2,,,b524,020103010400,value,,HDA:3,,,End date of holidays for zone 2
-r,,,Z2HolidayTemp,room setpoint holiday period zone 2,,,b524,020003010500,value,,IGN:4,,,,value,,EXP,,°C,Holiday setpoint for zone 2
-w,,,Z2HolidayTemp,room setpoint holiday period zone 2,,,b524,020103010500,value,,EXP,,°C,Holiday setpoint for zone 2
+r,,,Z2HolidayTemp,room setpoint holiday period zone 2,,,b524,020003010500,value,,IGN:4,,,,tempv,,EXP,,°C,Holiday setpoint for zone 2,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5],default,,EXP,,°C,[default:15]
+w,,,Z2HolidayTemp,room setpoint holiday period zone 2,,,b524,020103010500,tempv,,EXP,,°C,Holiday setpoint for zone 2
 r,,,Z2HeatingOpMode,heating operation mode zone 2,,,b524,020003010600,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 2
 w,,,Z2HeatingOpMode,heating operation mode zone 2,,,b524,020103010600,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 2
-r,,,Z2QuickVetoTemp,quick veto temperature zone 2,,,b524,020003010800,value,,IGN:4,,,,value,,EXP,,°C,Manual override setpoint for zone 2
-w,,,Z2QuickVetoTemp,quick veto temperature zone 2,,,b524,020103010800,value,,EXP,,°C,Manual override setpoint for zone 2
-r,,,Z2HeatingSetbackTemp,set back temperature zone 2,,,b524,020003010900,value,,IGN:4,,,,value,,EXP,,°C,Set back temperature zone 2 (time controlled heating)
-w,,,Z2HeatingSetbackTemp,set back temperature zone 2,,,b524,020103010900,value,,EXP,,°C,Set back temperature zone 2 (time controlled heating)
+r,,,Z2QuickVetoTemp,quick veto temperature zone 2,,,b524,020003010800,value,,IGN:4,,,,tempv,,EXP,,°C,Manual override setpoint for zone 2,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z2QuickVetoTemp,quick veto temperature zone 2,,,b524,020103010800,tempv,,EXP,,°C,Manual override setpoint for zone 2
+r,,,Z2HeatingSetbackTemp,set back temperature zone 2,,,b524,020003010900,value,,IGN:4,,,,tempv,,EXP,,°C,Set back temperature zone 2 (time controlled heating),min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z2HeatingSetbackTemp,set back temperature zone 2,,,b524,020103010900,tempv,,EXP,,°C,Set back temperature zone 2 (time controlled heating)
 r,,,Z2SFMode,Special Function (SF) mode zone 2,,,b524,020003010e00,value,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;3=veto,,
 w,,,Z2SFMode,Special Function (SF) mode zone 2,,,b524,020103010e00,value,,UCH,0=auto;1=ventilation;3=veto,,
 r,,,Z2RoomTemp,room temperature zone 2,,,b524,020003010f00,value,,IGN:4,,,,value,,EXP,,°C,Current room temperature in zone 2
@@ -321,30 +321,30 @@ r,,,Z2HolidayEndTime,end time of holidays for zone 2,,,b524,020003012000,value,,
 w,,,Z2HolidayEndTime,end time of holidays for zone 2,,,b524,020103012000,value,,HTI,,,
 r,,,Z2HolidayStartTime,start time of holidays for zone 2,,,b524,020003012100,value,,IGN:4,,,,value,,HTI,,,
 w,,,Z2HolidayStartTime,start time of holidays for zone 2,,,b524,020103012100,value,,HTI,,,
-r,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020003012200,value,,IGN:4,,,,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 2
-w,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020103012200,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 2
-r,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020003012300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2
-w,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020103012300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2
+r,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020003012200,value,,IGN:4,,,,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 2,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020103012200,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 2
+r,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020003012300,value,,IGN:4,,,,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020103012300,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 2
 r,,,Z2QuickVetoEndDate,quick veto end date zone 2,,,b524,020003012400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020003012600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020103012600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020003012600,value,,IGN:4,,,,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode,min,,EXP,,,[min:0.5],max,,EXP,,,[max:12],step,,EXP,,,[step:0.5],default,,EXP,,,[default:3]
+w,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020103012600,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z2RoomHumidity,room humidity zone 2,,,b524,020003012800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020003020100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 3
 w,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020103020100,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode for cooling of zone 3
-r,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020003020200,value,,IGN:4,,,,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 3
-w,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020103020200,value,,EXP,,°C,Time controlled desired cooling room temperature for zone 3
+r,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020003020200,value,,IGN:4,,,,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 3,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020103020200,tempv,,EXP,,°C,Time controlled desired cooling room temperature for zone 3
 r,,,Z3HolidayStartPeriod,holiday period start zone 3,,,b524,020003020300,value,,IGN:4,,,,value,,HDA:3,,,Start date of holidays for zone 3
 w,,,Z3HolidayStartPeriod,holiday period start zone 3,,,b524,020103020300,value,,HDA:3,,,Start date of holidays for zone 3
 r,,,Z3HolidayEndPeriod,holiday period end zone 3,,,b524,020003020400,value,,IGN:4,,,,value,,HDA:3,,,End date of holidays for zone 3
 w,,,Z3HolidayEndPeriod,holiday period end zone 3,,,b524,020103020400,value,,HDA:3,,,End date of holidays for zone 3
-r,,,Z3HolidayTemp,room setpoint holiday period zone 3,,,b524,020003020500,value,,IGN:4,,,,value,,EXP,,°C,Holiday setpoint for zone 3
-w,,,Z3HolidayTemp,room setpoint holiday period zone 3,,,b524,020103020500,value,,EXP,,°C,Holiday setpoint for zone 3
+r,,,Z3HolidayTemp,room setpoint holiday period zone 3,,,b524,020003020500,value,,IGN:4,,,,tempv,,EXP,,°C,Holiday setpoint for zone 3,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5],default,,EXP,,°C,[default:15]
+w,,,Z3HolidayTemp,room setpoint holiday period zone 3,,,b524,020103020500,tempv,,EXP,,°C,Holiday setpoint for zone 3
 r,,,Z3HeatingOpMode,heating operation mode zone 3,,,b524,020003020600,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 3
 w,,,Z3HeatingOpMode,heating operation mode zone 3,,,b524,020103020600,value,,UIN,0=off;1=time_controlled;2=manual,,Operation mode of zone 3
-r,,,Z3QuickVetoTemp,quick veto temperature zone 3,,,b524,020003020800,value,,IGN:4,,,,value,,EXP,,°C,Manual override setpoint for zone 3
-w,,,Z3QuickVetoTemp,quick veto temperature zone 3,,,b524,020103020800,value,,EXP,,°C,Manual override setpoint for zone 3
-r,,,Z3HeatingSetbackTemp,set back temperature zone 3,,,b524,020003020900,value,,IGN:4,,,,value,,EXP,,°C,Set back temperature zone 3 (time controlled heating)
-w,,,Z3HeatingSetbackTemp,set back temperature zone 3,,,b524,020103020900,value,,EXP,,°C,Set back temperature zone 3 (time controlled heating)
+r,,,Z3QuickVetoTemp,quick veto temperature zone 3,,,b524,020003020800,value,,IGN:4,,,,tempv,,EXP,,°C,Manual override setpoint for zone 3,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z3QuickVetoTemp,quick veto temperature zone 3,,,b524,020103020800,tempv,,EXP,,°C,Manual override setpoint for zone 3
+r,,,Z3HeatingSetbackTemp,set back temperature zone 3,,,b524,020003020900,value,,IGN:4,,,,tempv,,EXP,,°C,Set back temperature zone 3 (time controlled heating),min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z3HeatingSetbackTemp,set back temperature zone 3,,,b524,020103020900,tempv,,EXP,,°C,Set back temperature zone 3 (time controlled heating)
 r,,,Z3SFMode,Special Function (SF) mode zone 3,,,b524,020003020e00,value,,IGN:4,,,,value,,UCH,0=auto;1=ventilation;3=veto,,
 w,,,Z3SFMode,Special Function (SF) mode zone 3,,,b524,020103020e00,value,,UCH,0=auto;1=ventilation;3=veto,,
 r,,,Z3RoomTemp,room temperature zone 3,,,b524,020003020f00,value,,IGN:4,,,,value,,EXP,,°C,Current room temperature in zone 3
@@ -365,13 +365,13 @@ r,,,Z3HolidayEndTime,end time of holidays for zone 3,,,b524,020003022000,value,,
 w,,,Z3HolidayEndTime,end time of holidays for zone 3,,,b524,020103022000,value,,HTI,,,
 r,,,Z3HolidayStartTime,start time of holidays for zone 3,,,b524,020003022100,value,,IGN:4,,,,value,,HTI,,,
 w,,,Z3HolidayStartTime,start time of holidays for zone 3,,,b524,020103022100,value,,HTI,,,
-r,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020003022200,value,,IGN:4,,,,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 3
-w,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020103022200,value,,EXP,,°C,Desired heating setpoint in manual mode for zone 3
-r,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020003022300,value,,IGN:4,,,,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3
-w,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020103022300,value,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3
+r,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020003022200,value,,IGN:4,,,,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 3,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020103022200,tempv,,EXP,,°C,Desired heating setpoint in manual mode for zone 3
+r,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020003022300,value,,IGN:4,,,,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3,min,,EXP,,°C,[min:5],max,,EXP,,°C,[max:30],step,,EXP,,°C,[step:0.5]
+w,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020103022300,tempv,,EXP,,°C,Desired cooling setpoint in manual mode for zone 3
 r,,,Z3QuickVetoEndDate,quick veto end date zone 3,,,b524,020003022400,value,,IGN:4,,,,value,,HDA:3,,,date
-r,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020003022600,value,,IGN:4,,,,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
-w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,value,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
+r,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020003022600,value,,IGN:4,,,,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode,min,,EXP,,,[min:0.5],max,,EXP,,,[max:12],step,,EXP,,,[step:0.5],default,,EXP,,,[default:3]
+w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,exp,,EXP,,h,Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode
 r,,,Z3RoomHumidity,room humidity zone 3,,,b524,020003022800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,UnknownValue_a0,,,,b555,a0,value,,HEX:8,,,
 r,,,HwcTimer_Config,hwc timer Configuration,,,b555,a30002,value,,HEX:9,,,Configuration
