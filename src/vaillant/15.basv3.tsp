@@ -43,7 +43,15 @@ namespace Basv3 {
   @ext(0x1, 0)
   model HwcBivalencePoint {
     @minValue(-20) @maxValue(50) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:-20] */
+    min?: tempv;
+    /** [max:50] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:-7] */
+    default?: tempv;
   }
 
   /** continuos heating */
@@ -52,11 +60,19 @@ namespace Basv3 {
   model ContinuosHeating {
     @minValue(-26) @maxValue(10) @step(1)
     /** -26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:-26] */
+    min?: tempv;
+    /** [max:10] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:-26] */
+    default?: tempv;
   }
 
   /** frost delay time */
-  @inherit(r_1, wi_1)
+  @inherit(ri_1, wi_1)
   @ext(0x3, 0)
   model FrostOverrideTime {
     /** Delay before frost protection is activated */
@@ -75,7 +91,9 @@ namespace Basv3 {
   @inherit(r_1, wi_1)
   @ext(0xa, 0)
   model HwcParallelLoading {
-    value: onoff;
+    onoff: onoff;
+    /** [default:0] */
+    default?: onoff;
   }
 
   /** max room humidity */
@@ -91,7 +109,9 @@ namespace Basv3 {
   @ext(0xf, 0)
   model HybridManager {
     /** 0=Trivalence (tariff based); 1=Bivalence (Outside temperature based) */
-    value: hmmode;
+    hmmode: hmmode;
+    /** [default:1] */
+    default?: hmmode;
   }
 
   /** tariff aux heater */
@@ -107,21 +127,42 @@ namespace Basv3 {
   @ext(0x14, 0)
   model AdaptHeatCurve {
     /** Automatic correction of configured heat curve */
-    value: yesno;
+    yesno: yesno;
+    /** [default:0] */
+    default?: yesno;
   }
 
   /** hwc cylinder maximum charging time */
   @inherit(r_1, wi_1)
   @ext(0x17, 0)
   model HwcCylinderChargeMaxTime {
-    value: minutes2;
+    @minValue(19) @maxValue(120) @step(1)
+    /** 19=No limit */
+    minutes2: minutes2;
+    /** [min:19] */
+    min?: minutes2;
+    /** [max:120] */
+    max?: minutes2;
+    /** [step:1] */
+    step?: minutes2;
+    /** [default:60 or 90] */
+    default?: minutes2;
   }
 
   /** hwc lock time */
   @inherit(r_1, wi_1)
   @ext(0x18, 0)
   model HwcLockTime {
-    value: minutes2;
+    @minValue(0) @maxValue(120) @step(1)
+    minutes2: minutes2;
+    /** [min:0] */
+    min?: minutes2;
+    /** [max:120] */
+    max?: minutes2;
+    /** [step:1] */
+    step?: minutes2;
+    /** [default:60] */
+    default?: minutes2;
   }
 
   /** pump additional time */
@@ -138,7 +179,15 @@ namespace Basv3 {
   model HcAlternativePoint {
     @minValue(-21) @maxValue(40) @step(1)
     /** exclusively alternate heating below alternative point (-21=off) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:-21] */
+    min?: tempv;
+    /** [max:40] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:-21] */
+    default?: tempv;
   }
 
   /** hc bivalence point */
@@ -147,7 +196,15 @@ namespace Basv3 {
   model HcBivalencePoint {
     @minValue(-20) @maxValue(30) @step(1)
     /** Bivalence point heating */
-    value: tempv;
+    tempv: tempv;
+    /** [min:-20] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:-5] */
+    default?: tempv;
   }
 
   /** backup boiler */
@@ -155,7 +212,9 @@ namespace Basv3 {
   @ext(0x24, 0)
   model BackupBoiler {
     /** Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc) */
-    value: backmode2;
+    backmode2: backmode2;
+    /** [default:3] */
+    default?: backmode2;
   }
 
   /** hc emergency temperature */
@@ -164,7 +223,15 @@ namespace Basv3 {
   model HcEmergencyTemperature {
     @minValue(20) @maxValue(80) @step(1)
     /** Emergency operation temperature */
-    value: tempv;
+    tempv: tempv;
+    /** [min:20] */
+    min?: tempv;
+    /** [max:80] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:25] */
+    default?: tempv;
   }
 
   /** hysteresis cylinder charge */
@@ -173,7 +240,15 @@ namespace Basv3 {
   model HwcCylinderChargeHyst {
     @minValue(3) @maxValue(20) @step(0.5)
     /** Hysteresis cylinder charge */
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:3] */
+    min?: calibrationv;
+    /** [max:20] */
+    max?: calibrationv;
+    /** [step:0.5] */
+    step?: calibrationv;
+    /** [default:5 or 7] */
+    default?: calibrationv;
   }
 
   /** offset cylinder charge */
@@ -181,7 +256,15 @@ namespace Basv3 {
   @ext(0x29, 0)
   model HwcCylinderChargeOffset {
     @minValue(0) @maxValue(40) @step(1)
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:0] */
+    min?: calibrationv;
+    /** [max:40] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
+    /** [default:25 or 10] */
+    default?: calibrationv;
   }
 
   /** hwc legionella time */
@@ -212,7 +295,15 @@ namespace Basv3 {
   model OffsetOutsideTemp {
     @minValue(-3) @maxValue(3) @step(0.5)
     /* Offset outside temperature (used to determined OutsideTemp) */
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:-3] */
+    min?: calibrationv;
+    /** [max:3] */
+    max?: calibrationv;
+    /** [step:0.5] */
+    step?: calibrationv;
+    /** [default:0] */
+    default?: calibrationv;
   }
 
   /** date */
@@ -244,7 +335,15 @@ namespace Basv3 {
   model CoolingOutsideTempThreshold {
     @minValue(10) @maxValue(30) @step(1)
     /** Activate Cooling when average outside temperature exceeds threshold */
-    value: tempv;
+    tempv: tempv;
+    /** [min:10] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** water pressure */
@@ -260,7 +359,13 @@ namespace Basv3 {
   model DewPointOffset {
     @minValue(-10) @maxValue(10) @step(1)
     /** Subtract from Z*RoomTemp to calculate dew point */
-    value: tempv;
+    tempv: tempv;
+    /** [min:-10] */
+    min?: tempv;
+    /** [max:10] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
   }
 
   /** total solar yield */
@@ -290,7 +395,13 @@ namespace Basv3 {
   model HwcFlowTempMax {
     @minValue(15) @maxValue(80) @step(1)
     /** Maximum flow temperature setpoint of Hwc */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:80] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
   }
 
   /** system flow temp */
@@ -304,7 +415,9 @@ namespace Basv3 {
   @inherit(r_1, wi_1)
   @ext(0x4d, 0)
   model MultiRelaySetting {
-    value: mamode;
+    mamode: mamode;
+    /** [default:0] */
+    default?: mamode;
   }
 
   /** this month's fuel consumption heating */
@@ -466,7 +579,15 @@ namespace Basv3 {
   model KeyCodeforConfigMenu {
     @minValue(0) @maxValue(999) @step(1)
     /** 000-999; code for the installer's menues */
-    value: UIN;
+    uin: UIN;
+    /** [min:0] */
+    min?: UIN;
+    /** [max:999] */
+    max?: UIN;
+    /** [step:1] */
+    step?: UIN;
+    /** [default:0] */
+    default?: UIN;
   }
 
   /** average outside temperature */
@@ -524,7 +645,15 @@ namespace Basv3 {
   @ext(0xa2, 0)
   model BufferChargeOffset {
     @minValue(0) @maxValue(15) @step(1)
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:0] */
+    min?: calibrationv;
+    /** [max:15] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
+    /** [default:10] */
+    default?: calibrationv;
   }
 
   // ##### hot water circuit #####
@@ -567,10 +696,16 @@ namespace Basv3 {
   /** hwc temperature desired */
   @inherit(r_2, w_2)
   @ext(0x4, 0)
-  model HwcTempDesired {
+  model HwcSetpointTemp {
     @minValue(35) @maxValue(70) @step(1)
     /** Setpoint of domestic hot water circuit */
-    value: tempv;
+    tempv: tempv;
+    /** [min:35] */
+    min?: tempv;
+    /** [max:70] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
   }
 
   /** hwc cylinder temperature */
@@ -671,7 +806,15 @@ namespace Basv3 {
   model Hc1DesiredReturnTemp {
     @minValue(15) @maxValue(80) @step(1)
     /** Temperature for the increase in return circuit (default 30) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:80] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:30] */
+    default?: tempv;
   }
 
   /** DewPointMonitoring heating circuit 1 */
@@ -717,7 +860,15 @@ namespace Basv3 {
   @ext(0xa, 0)
   model Hc1DewPointOffset {
     @minValue(-10) @maxValue(10) @step(1)
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:-10] */
+    min?: calibrationv;
+    /** [max:10] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
+    /** [default:2] */
+    default?: calibrationv;
   }
 
   /** ExcessTemp heating circuit 1 */
@@ -726,15 +877,29 @@ namespace Basv3 {
   model Hc1ExcessTemp {
     @minValue(0) @maxValue(20) @step(1)
     /** Excess temperature of Hc1 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range) */
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:0] */
+    min?: calibrationv;
+    /** [max:20] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
   }
 
   /** DesiredTemp heating circuit 1 */
   @inherit(r_3, w_3)
   @ext(0xc, 0)
-  model Hc1FixedDesiredTemp {
+  model Hc1FixedSetpointTemp {
     @minValue(5) @maxValue(90) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:65] */
+    default?: tempv;
   }
 
   /** DesiredSetbackTemp heating circuit 1 */
@@ -743,7 +908,15 @@ namespace Basv3 {
   model Hc1FixedSetbackTemp {
     @minValue(0) @maxValue(90) @step(1)
     /* Target setback temperatur Hc1 (fixed circuit type) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:0] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:0] */
+    default?: tempv;
   }
 
   /** SetbackMode heating circuit 1 */
@@ -751,7 +924,9 @@ namespace Basv3 {
   @ext(0xe, 0)
   model Hc1SetbackMode {
     /** Operation of Hc1 during the lowering time; no influence if room temperature modulation is set to expanded */
-    value: offmode2;
+    offmode2: offmode2;
+    /** [default:0] */
+    default?: offmode2;
   }
 
   /** HeatCurve heating circuit 1 */
@@ -759,7 +934,15 @@ namespace Basv3 {
   @ext(0xf, 0)
   model Hc1HeatCurve {
     @minValue(0.1) @maxValue(4) @step(0.05)
-    value: EXP;
+    exp: EXP;
+    /** [min:0.1] */
+    min?: EXP;
+    /** [max:4] */
+    max?: EXP;
+    /** [step:0.05] */
+    step?: EXP;
+    /** [default:1.2 or 0.6] */
+    default?: EXP;
   }
 
   /** HeatingMaxFlowTempDesired heating circuit 1 */
@@ -768,7 +951,15 @@ namespace Basv3 {
   model Hc1HeatingFlowTempMax {
     @minValue(15) @maxValue(90) @step(1)
     /** Maximum flow temperature setpoint (end emphasis) of Hc1 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:90 or 55] */
+    default?: tempv;
   }
 
   /** CoolingMinFlowTempDesired heating circuit 1 */
@@ -776,7 +967,15 @@ namespace Basv3 {
   @ext(0x11, 0)
   model Hc1CoolingFlowTempMin {
     @minValue(7) @maxValue(24) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:7] */
+    min?: tempv;
+    /** [max:24] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:20] */
+    default?: tempv;
   }
 
   /** HeatingMinFlowTempDesired heating circuit 1 */
@@ -785,7 +984,15 @@ namespace Basv3 {
   model Hc1HeatingFlowTempMin {
     @minValue(15) @maxValue(90) @step(1)
     /** Minimum flow temperature setpoint (end emphasis) of Hc1 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** ExtHwcOpMode heating circuit 1 */
@@ -801,7 +1008,15 @@ namespace Basv3 {
   model Hc1SummerTempLimit {
     @minValue(10) @maxValue(99) @step(1)
     /** If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint */
-    value: tempv;
+    tempv: tempv;
+    /** [min:10] */
+    min?: tempv;
+    /** [max:99] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:21 or 16] */
+    default?: tempv;
   }
 
   /** RoomTempMod heating circuit 1 */
@@ -809,7 +1024,9 @@ namespace Basv3 {
   @ext(0x15, 0)
   model Hc1RoomTempMod {
     /** Room temperature modulation of Hc1 */
-    value: rcmode2;
+    rcmode2: rcmode2;
+    /** [default:0] */
+    default?: rcmode2;
   }
 
   /** ExtHwcActive heating circuit 1 */
@@ -884,7 +1101,15 @@ namespace Basv3 {
   model Hc2DesiredReturnTemp {
     @minValue(15) @maxValue(80) @step(1)
     /** Temperature for the increase in return circuit (default 30) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:80] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:30] */
+    default?: tempv;
   }
 
   /** DewPointMonitoring heating circuit 2 */
@@ -930,7 +1155,15 @@ namespace Basv3 {
   @ext(0xa, 0)
   model Hc2DewPointOffset {
     @minValue(-10) @maxValue(10) @step(1)
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:-10] */
+    min?: calibrationv;
+    /** [max:10] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
+    /** [default:2] */
+    default?: calibrationv;
   }
 
   /** ExcessTemp heating circuit 2 */
@@ -939,15 +1172,29 @@ namespace Basv3 {
   model Hc2ExcessTemp {
     @minValue(0) @maxValue(20) @step(1)
     /** Excess temperature of Hc2 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range) */
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:0] */
+    min?: calibrationv;
+    /** [max:20] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
   }
 
   /** DesiredTemp heating circuit 2 */
   @inherit(r_4, w_4)
   @ext(0xc, 0)
-  model Hc2FixedDesiredTemp {
+  model Hc2FixedSetpointTemp {
     @minValue(5) @maxValue(90) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:65] */
+    default?: tempv;
   }
 
   /** DesiredSetbackTemp heating circuit 2 */
@@ -956,7 +1203,15 @@ namespace Basv3 {
   model Hc2FixedSetbackTemp {
     @minValue(0) @maxValue(90) @step(1)
     /* Target setback temperatur Hc2 (fixed circuit type) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:0] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:0] */
+    default?: tempv;
   }
 
   /** SetbackMode heating circuit 2 */
@@ -964,7 +1219,9 @@ namespace Basv3 {
   @ext(0xe, 0)
   model Hc2SetbackMode {
     /** Operation of Hc2 during the lowering time; no influence if room temperature modulation is set to expanded */
-    value: offmode2;
+    offmode2: offmode2;
+    /** [default:0] */
+    default?: offmode2;
   }
 
   /** HeatCurve heating circuit 2 */
@@ -972,7 +1229,15 @@ namespace Basv3 {
   @ext(0xf, 0)
   model Hc2HeatCurve {
     @minValue(0.1) @maxValue(4) @step(0.05)
-    value: EXP;
+    exp: EXP;
+    /** [min:0.1] */
+    min?: EXP;
+    /** [max:4] */
+    max?: EXP;
+    /** [step:0.05] */
+    step?: EXP;
+    /** [default:1.2 or 0.6] */
+    default?: EXP;
   }
 
   /** HeatingMaxFlowTempDesired heating circuit 2 */
@@ -981,7 +1246,15 @@ namespace Basv3 {
   model Hc2HeatingFlowTempMax {
     @minValue(15) @maxValue(90) @step(1)
     /** Maximum flow temperature setpoint (end emphasis) of Hc2 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:90 or 55] */
+    default?: tempv;
   }
 
   /** CoolingMinFlowTempDesired heating circuit 2 */
@@ -989,7 +1262,15 @@ namespace Basv3 {
   @ext(0x11, 0)
   model Hc2CoolingFlowTempMin {
     @minValue(7) @maxValue(24) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:7] */
+    min?: tempv;
+    /** [max:24] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:20] */
+    default?: tempv;
   }
 
   /** HeatingMinFlowTempDesired heating circuit 2 */
@@ -998,7 +1279,15 @@ namespace Basv3 {
   model Hc2HeatingFlowTempMin {
     @minValue(15) @maxValue(90) @step(1)
     /** Minimum flow temperature setpoint (end emphasis) of Hc2 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** ExtHwcOpMode heating circuit 2 */
@@ -1014,7 +1303,15 @@ namespace Basv3 {
   model Hc2SummerTempLimit {
     @minValue(10) @maxValue(99) @step(1)
     /** If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint */
-    value: tempv;
+    tempv: tempv;
+    /** [min:10] */
+    min?: tempv;
+    /** [max:99] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:21 or 16] */
+    default?: tempv;
   }
 
   /** RoomTempMod heating circuit 2 */
@@ -1022,7 +1319,9 @@ namespace Basv3 {
   @ext(0x15, 0)
   model Hc2RoomTempMod {
     /** Room temperature modulation of Hc2 */
-    value: rcmode2;
+    rcmode2: rcmode2;
+    /** [default:0] */
+    default?: rcmode2;
   }
 
   /** ExtHwcActive heating circuit 2 */
@@ -1097,7 +1396,15 @@ namespace Basv3 {
   model Hc3DesiredReturnTemp {
     @minValue(15) @maxValue(80) @step(1)
     /** Temperature for the increase in return circuit (default 30) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:80] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:30] */
+    default?: tempv;
   }
 
   /** DewPointMonitoring heating circuit 3 */
@@ -1143,7 +1450,15 @@ namespace Basv3 {
   @ext(0xa, 0)
   model Hc3DewPointOffset {
     @minValue(-10) @maxValue(10) @step(1)
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:-10] */
+    min?: calibrationv;
+    /** [max:10] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
+    /** [default:2] */
+    default?: calibrationv;
   }
 
   /** ExcessTemp heating circuit 3 */
@@ -1152,15 +1467,29 @@ namespace Basv3 {
   model Hc3ExcessTemp {
     @minValue(0) @maxValue(20) @step(1)
     /** Excess temperature of Hc3 (flow temperature's setpoint is increased by this value to keep the mixing valve in its control range) */
-    value: calibrationv;
+    calibrationv: calibrationv;
+    /** [min:0] */
+    min?: calibrationv;
+    /** [max:20] */
+    max?: calibrationv;
+    /** [step:1] */
+    step?: calibrationv;
   }
 
   /** DesiredTemp heating circuit 3 */
   @inherit(r_5, w_5)
   @ext(0xc, 0)
-  model Hc3FixedDesiredTemp {
+  model Hc3FixedSetpointTemp {
     @minValue(5) @maxValue(90) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:65] */
+    default?: tempv;
   }
 
   /** DesiredSetbackTemp heating circuit 3 */
@@ -1169,7 +1498,15 @@ namespace Basv3 {
   model Hc3FixedSetbackTemp {
     @minValue(0) @maxValue(90) @step(1)
     /* Target setback temperatur Hc3 (fixed circuit type) */
-    value: tempv;
+    tempv: tempv;
+    /** [min:0] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:0] */
+    default?: tempv;
   }
 
   /** SetbackMode heating circuit 3 */
@@ -1177,7 +1514,9 @@ namespace Basv3 {
   @ext(0xe, 0)
   model Hc3SetbackMode {
     /** Operation of Hc3 during the lowering time; no influence if room temperature modulation is set to expanded */
-    value: offmode2;
+    offmode2: offmode2;
+    /** [default:0] */
+    default?: offmode2;
   }
 
   /** HeatCurve heating circuit 3 */
@@ -1185,7 +1524,15 @@ namespace Basv3 {
   @ext(0xf, 0)
   model Hc3HeatCurve {
     @minValue(0.1) @maxValue(4) @step(0.05)
-    value: EXP;
+    exp: EXP;
+    /** [min:0.1] */
+    min?: EXP;
+    /** [max:4] */
+    max?: EXP;
+    /** [step:0.05] */
+    step?: EXP;
+    /** [default:1.2 or 0.6] */
+    default?: EXP;
   }
 
   /** HeatingMaxFlowTempDesired heating circuit 3 */
@@ -1194,7 +1541,15 @@ namespace Basv3 {
   model Hc3HeatingFlowTempMax {
     @minValue(15) @maxValue(90) @step(1)
     /** Maximum flow temperature setpoint (end emphasis) of Hc3 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:90 or 55] */
+    default?: tempv;
   }
 
   /** CoolingMinFlowTempDesired heating circuit 3 */
@@ -1202,7 +1557,15 @@ namespace Basv3 {
   @ext(0x11, 0)
   model Hc3CoolingFlowTempMin {
     @minValue(7) @maxValue(24) @step(1)
-    value: tempv;
+    tempv: tempv;
+    /** [min:7] */
+    min?: tempv;
+    /** [max:24] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:20] */
+    default?: tempv;
   }
 
   /** HeatingMinFlowTempDesired heating circuit 3 */
@@ -1211,7 +1574,15 @@ namespace Basv3 {
   model Hc3HeatingFlowTempMin {
     @minValue(15) @maxValue(90) @step(1)
     /** Minimum flow temperature setpoint (end emphasis) of Hc3 */
-    value: tempv;
+    tempv: tempv;
+    /** [min:15] */
+    min?: tempv;
+    /** [max:90] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** ExtHwcOpMode heating circuit 3 */
@@ -1227,7 +1598,15 @@ namespace Basv3 {
   model Hc3SummerTempLimit {
     @minValue(10) @maxValue(99) @step(1)
     /** If outside temperature > summer limit => heating is OFF;applies to comfort and night setback setpoint */
-    value: tempv;
+    tempv: tempv;
+    /** [min:10] */
+    min?: tempv;
+    /** [max:99] */
+    max?: tempv;
+    /** [step:1] */
+    step?: tempv;
+    /** [default:21 or 16] */
+    default?: tempv;
   }
 
   /** RoomTempMod heating circuit 3 */
@@ -1235,7 +1614,9 @@ namespace Basv3 {
   @ext(0x15, 0)
   model Hc3RoomTempMod {
     /** Room temperature modulation of Hc3 */
-    value: rcmode2;
+    rcmode2: rcmode2;
+    /** [default:0] */
+    default?: rcmode2;
   }
 
   /** ExtHwcActive heating circuit 3 */
@@ -1309,7 +1690,14 @@ namespace Basv3 {
   @ext(0x2, 0)
   model Z1CoolingSetbackTemp {
     /** Time controlled desired cooling room temperature for zone 1 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** holiday period start zone 1 */
@@ -1333,7 +1721,16 @@ namespace Basv3 {
   @ext(0x5, 0)
   model Z1HolidayTemp {
     /** Holiday setpoint for zone 1 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** heating operation mode zone 1 */
@@ -1349,7 +1746,14 @@ namespace Basv3 {
   @ext(0x8, 0)
   model Z1QuickVetoTemp {
     /** Manual override setpoint for zone 1 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** set back temperature zone 1 */
@@ -1357,7 +1761,14 @@ namespace Basv3 {
   @ext(0x9, 0)
   model Z1HeatingSetbackTemp {
     /** Set back temperature zone 1 (time controlled heating) */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** Special Function (SF) mode zone 1 */
@@ -1463,7 +1874,14 @@ namespace Basv3 {
   @ext(0x22, 0)
   model Z1HeatingSetpointTemp {
     /** Desired heating setpoint in manual mode for zone 1 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** manual cooling setpoint zone 1 */
@@ -1471,7 +1889,14 @@ namespace Basv3 {
   @ext(0x23, 0)
   model Z1CoolingSetpointTemp {
     /** Desired cooling setpoint in manual mode for zone 1 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** quick veto end date zone 1 */
@@ -1487,7 +1912,16 @@ namespace Basv3 {
   model Z1QuickVetoDuration {
     /** Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode */
     @unit("h")
-    value: EXP;
+    @minValue(0.5) @maxValue(12) @step(0.5)
+    exp: EXP;
+    /** [min:0.5] */
+    min?: EXP;
+    /** [max:12] */
+    max?: EXP;
+    /** [step:0.5] */
+    step?: EXP;
+    /** [default:3] */
+    default?: EXP;
   }
 
   /** room humidity zone 1 */
@@ -1524,7 +1958,14 @@ namespace Basv3 {
   @ext(0x2, 0)
   model Z2CoolingSetbackTemp {
     /** Time controlled desired cooling room temperature for zone 2 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** holiday period start zone 2 */
@@ -1548,7 +1989,16 @@ namespace Basv3 {
   @ext(0x5, 0)
   model Z2HolidayTemp {
     /** Holiday setpoint for zone 2 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** heating operation mode zone 2 */
@@ -1564,7 +2014,14 @@ namespace Basv3 {
   @ext(0x8, 0)
   model Z2QuickVetoTemp {
     /** Manual override setpoint for zone 2 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** set back temperature zone 2 */
@@ -1572,7 +2029,14 @@ namespace Basv3 {
   @ext(0x9, 0)
   model Z2HeatingSetbackTemp {
     /** Set back temperature zone 2 (time controlled heating) */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** Special Function (SF) mode zone 2 */
@@ -1678,7 +2142,14 @@ namespace Basv3 {
   @ext(0x22, 0)
   model Z2HeatingSetpointTemp {
     /** Desired heating setpoint in manual mode for zone 2 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** manual cooling setpoint zone 2 */
@@ -1686,7 +2157,14 @@ namespace Basv3 {
   @ext(0x23, 0)
   model Z2CoolingSetpointTemp {
     /** Desired cooling setpoint in manual mode for zone 2 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** quick veto end date zone 2 */
@@ -1702,7 +2180,16 @@ namespace Basv3 {
   model Z2QuickVetoDuration {
     /** Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode */
     @unit("h")
-    value: EXP;
+    @minValue(0.5) @maxValue(12) @step(0.5)
+    exp: EXP;
+    /** [min:0.5] */
+    min?: EXP;
+    /** [max:12] */
+    max?: EXP;
+    /** [step:0.5] */
+    step?: EXP;
+    /** [default:3] */
+    default?: EXP;
   }
 
   /** room humidity zone 2 */
@@ -1739,7 +2226,14 @@ namespace Basv3 {
   @ext(0x2, 0)
   model Z3CoolingSetbackTemp {
     /** Time controlled desired cooling room temperature for zone 3 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** holiday period start zone 3 */
@@ -1763,7 +2257,16 @@ namespace Basv3 {
   @ext(0x5, 0)
   model Z3HolidayTemp {
     /** Holiday setpoint for zone 3 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
+    /** [default:15] */
+    default?: tempv;
   }
 
   /** heating operation mode zone 3 */
@@ -1779,7 +2282,14 @@ namespace Basv3 {
   @ext(0x8, 0)
   model Z3QuickVetoTemp {
     /** Manual override setpoint for zone 3 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** set back temperature zone 3 */
@@ -1787,7 +2297,14 @@ namespace Basv3 {
   @ext(0x9, 0)
   model Z3HeatingSetbackTemp {
     /** Set back temperature zone 3 (time controlled heating) */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** Special Function (SF) mode zone 3 */
@@ -1893,7 +2410,14 @@ namespace Basv3 {
   @ext(0x22, 0)
   model Z3HeatingSetpointTemp {
     /** Desired heating setpoint in manual mode for zone 3 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** manual cooling setpoint zone 3 */
@@ -1901,7 +2425,14 @@ namespace Basv3 {
   @ext(0x23, 0)
   model Z3CoolingSetpointTemp {
     /** Desired cooling setpoint in manual mode for zone 3 */
-    value: tempv;
+    @minValue(5) @maxValue(30) @step(0.5)
+    tempv: tempv;
+    /** [min:5] */
+    min?: tempv;
+    /** [max:30] */
+    max?: tempv;
+    /** [step:0.5] */
+    step?: tempv;
   }
 
   /** quick veto end date zone 3 */
@@ -1917,7 +2448,16 @@ namespace Basv3 {
   model Z3QuickVetoDuration {
     /** Valid values are 0.5-12 in 0.5 increments (default 3); writing enables quick veto mode */
     @unit("h")
-    value: EXP;
+    @minValue(0.5) @maxValue(12) @step(0.5)
+    exp: EXP;
+    /** [min:0.5] */
+    min?: EXP;
+    /** [max:12] */
+    max?: EXP;
+    /** [step:0.5] */
+    step?: EXP;
+    /** [default:3] */
+    default?: EXP;
   }
 
   /** room humidity zone 3 */
