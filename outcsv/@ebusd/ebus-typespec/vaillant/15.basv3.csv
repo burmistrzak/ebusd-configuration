@@ -2,65 +2,66 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *r,
 *w,
 r,,,HwcBivalencePoint,Hwc bivalence point,,,b524,020000000100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,value,,EXP,,°C,temperature
+w,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,value,,EXP,,°C,temperature
 r,,,ContinuosHeating,continuos heating,,,b524,020000000200,value,,IGN:4,,,,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
-w,,,ContinuosHeating,continuos heating,,,b524,020100000200,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
+w,,install,ContinuosHeating,continuos heating,,,b524,020100000200,value,,EXP,,°C,"-26=off, when the outside temperature falls below this threshold temperature the continuous heating function is started (off <=> function is disabled)"
 r,,,FrostOverrideTime,frost delay time,,,b524,020000000300,value,,IGN:4,,,,value,,UIN,,h,Delay before frost protection is activated
-w,,,FrostOverrideTime,frost delay time,,,b524,020100000300,value,,UIN,,h,Delay before frost protection is activated
+w,,install,FrostOverrideTime,frost delay time,,,b524,020100000300,value,,UIN,,h,Delay before frost protection is activated
 r,,,GlobalSystemOff,Global System OFF,,,b524,020000000700,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,For switching system off
-w,,install,GlobalSystemOff,Global System OFF,,,b524,020100000700,value,,UCH,0=no;1=yes,,For switching system off
+w,,,GlobalSystemOff,Global System OFF,,,b524,020100000700,value,,UCH,0=no;1=yes,,For switching system off
 r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
+w,,install,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
 r,,,MaxRoomHumidity,max room humidity,,,b524,020000000e00,value,,IGN:4,,,,value,,UIN,,,Maximum room humidity
-w,,,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,Maximum room humidity
-r,,,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,value,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
-r,,,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,Secondary heater tariff value
+w,,install,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,Maximum room humidity
+r,,install,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,value,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
+w,,install,HybridManager,hybrid manager,,,b524,020100000f00,value,,UCH,0=trivalence;1=bivalence,,0=Trivalence (tariff based); 1=Bivalence (Outside temperature based)
+r,,install,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,Secondary heater tariff value
 r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
-w,,,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
+w,,install,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,Automatic correction of configured heat curve
 r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
+w,,install,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
 r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
+w,,install,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
 r,,,PumpAdditionalTime,pump additional time,,,b524,020000001b00,value,,IGN:4,,,,value,,UIN,,min,Additional time the pump is running
-w,,,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,Additional time the pump is running
+w,,install,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,Additional time the pump is running
 r,,,HcAlternativePoint,hc alternative point,,,b524,020000002200,value,,IGN:4,,,,value,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
-w,,,HcAlternativePoint,hc alternative point,,,b524,020100002200,value,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
+w,,install,HcAlternativePoint,hc alternative point,,,b524,020100002200,value,,EXP,,°C,exclusively alternate heating below alternative point (-21=off)
 r,,,HcBivalencePoint,hc bivalence point,,,b524,020000002300,value,,IGN:4,,,,value,,EXP,,°C,Bivalence point heating
-w,,,HcBivalencePoint,hc bivalence point,,,b524,020100002300,value,,EXP,,°C,Bivalence point heating
+w,,install,HcBivalencePoint,hc bivalence point,,,b524,020100002300,value,,EXP,,°C,Bivalence point heating
 r,,,BackupBoiler,backup boiler,,,b524,020000002400,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
-w,,,BackupBoiler,backup boiler,,,b524,020100002400,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
+w,,install,BackupBoiler,backup boiler,,,b524,020100002400,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,Function of back-up boiler (Off/Hc/Hwc/Hc+Hwc)
 r,,,HcEmergencyTemperature,hc emergency temperature,,,b524,020000002600,value,,IGN:4,,,,value,,EXP,,°C,Emergency operation temperature
-w,,,HcEmergencyTemperature,hc emergency temperature,,,b524,020100002600,value,,EXP,,°C,Emergency operation temperature
+w,,install,HcEmergencyTemperature,hc emergency temperature,,,b524,020100002600,value,,EXP,,°C,Emergency operation temperature
 r,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,value,,IGN:4,,,,value,,EXP,,K,Hysteresis cylinder charge
-w,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,Hysteresis cylinder charge
+w,,install,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,Hysteresis cylinder charge
 r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IGN:4,,,,value,,EXP,,K,
-w,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
+w,,install,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
 r,,,HwcLegionellaTime,hwc legionella time,,,b524,020000002a00,value,,IGN:4,,,,value,,HTM,,,
-w,,,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
+w,,install,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
 r,,,HwcLegionellaDay,ohwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
-w,,,HwcLegionellaDay,ohwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
+w,,install,HwcLegionellaDay,ohwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
 r,,,MaintenanceDate,next maintenance,,,b524,020000002c00,value,,IGN:4,,,,value,,HDA:3,,,Date for next maintenance
-w,,,MaintenanceDate,next maintenance,,,b524,020100002c00,value,,HDA:3,,,Date for next maintenance
+w,,install,MaintenanceDate,next maintenance,,,b524,020100002c00,value,,HDA:3,,,Date for next maintenance
 r,,,OffsetOutsideTemp,offset outside temperature,,,b524,020000002d00,value,,IGN:4,,,,value,,EXP,,K,
 w,,,OffsetOutsideTemp,offset outside temperature,,,b524,020100002d00,value,,EXP,,K,
 r,,,Date,date,,,b524,020000003400,value,,IGN:4,,,,value,,HDA:3,,,Current date
 r,,,Time,time,,,b524,020000003500,value,,IGN:4,,,,value,,HTI,,,Current time
 r,,,HydraulicScheme,hydraulic scheme,,,b524,020000003600,value,,IGN:4,,,,value,,UIN,,,
-w,,,HydraulicScheme,hydraulic scheme,,,b524,020100003600,value,,UIN,,,
+w,,install,HydraulicScheme,hydraulic scheme,,,b524,020100003600,value,,UIN,,,
 r,,,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020000003800,value,,IGN:4,,,,value,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
-w,,,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020100003800,value,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
+w,,install,CoolingOutsideTempThreshold,cooling outside temperature threshold,,,b524,020100003800,value,,EXP,,°C,Activate Cooling when average outside temperature exceeds threshold
 r,,,WaterPressure,water pressure,,,b524,020000003900,value,,IGN:4,,,,value,,EXP,,bar,pressure
 r,,,DewPointOffset,dew point offset,,,b524,020000003a00,value,,IGN:4,,,,value,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
-w,,,DewPointOffset,dew point offset,,,b524,020100003a00,value,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
+w,,install,DewPointOffset,dew point offset,,,b524,020100003a00,value,,EXP,,°C,Subtract from Z*RoomTemp to calculate dew point
 r,,,SolarYieldTotal,total solar yield,,,b524,020000003d00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,EnvYieldTotal,total environmental yield,,,b524,020000003e00,value,,IGN:4,,,,value,,ULG,,kWh,
-r,,,ESCOBlockFunction,esco block function,,,b524,020000004500,value,,IGN:4,,,,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
-w,,,ESCOBlockFunction,esco block function,,,b524,020100004500,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
+r,,,ESCO,esco block function,,,b524,020000004500,value,,IGN:4,,,,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
+w,,,ESCO,esco block function,,,b524,020100004500,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
 r,,,HwcFlowTempMax,hwc max flow temp,,,b524,020000004600,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint of Hwc
-w,,,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,Maximum flow temperature setpoint of Hwc
+w,,install,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,Maximum flow temperature setpoint of Hwc
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
+w,,install,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
 r,,,PrFuelSumHcThisMonth,this month's fuel consumption heating,,,b524,020000004e00,value,,IGN:4,,,,value,,ULG,,kWh,This month's fuel consumption for heating
 r,,,PrEnergySumHcThisMonth,this month's energy consumption heating,,,b524,020000004f00,value,,IGN:4,,,,value,,ULG,,kWh,This month's energy consumption for heating
 r,,,PrEnergySumHwcThisMonth,this month's energy consumption hot water,,,b524,020000005000,value,,IGN:4,,,,value,,ULG,,kWh,This month's energy consumption for hot water
@@ -74,26 +75,25 @@ r,,,PrEnergySumHc,total energy consumption heating,,,b524,020000005700,value,,IG
 r,,,PrEnergySumHwc,total energy consumption hot water,,,b524,020000005800,value,,IGN:4,,,,value,,ULG,,kWh,Total energy consumption for hot water
 r,,,PrFuelSumHwc,total fuel consumption hot water,,,b524,020000005900,value,,IGN:4,,,,value,,ULG,,kWh,Total fuel consumption for hot water
 r,,,Installer1,total energy consumptionTotal year electricity consumptiontotal fuel consumptionTotal fuel consumptioninstaller name 1,,,b524,020000006c00,value,,IGN:4,,,,value,,STR:6,,,Installer's name
-w,,,Installer1,total energy consumptionTotal year electricity consumptiontotal fuel consumptionTotal fuel consumptioninstaller name 1,,,b524,020100006c00,value,,STR:6,,,Installer's name
+w,,install,Installer1,total energy consumptionTotal year electricity consumptiontotal fuel consumptionTotal fuel consumptioninstaller name 1,,,b524,020100006c00,value,,STR:6,,,Installer's name
 r,,,Installer2,installer name 2,,,b524,020000006d00,value,,IGN:4,,,,value,,STR:6,,,Installer's name
-w,,,Installer2,installer name 2,,,b524,020100006d00,value,,STR:6,,,Installer's name
+w,,install,Installer2,installer name 2,,,b524,020100006d00,value,,STR:6,,,Installer's name
 r,,,PhoneNumber1,phone number 1 (first part),,,b524,020000006f00,value,,IGN:4,,,,value,,STR:6,,,Installer's telephone number
-w,,,PhoneNumber1,phone number 1 (first part),,,b524,020100006f00,value,,STR:6,,,Installer's telephone number
+w,,install,PhoneNumber1,phone number 1 (first part),,,b524,020100006f00,value,,STR:6,,,Installer's telephone number
 r,,,PhoneNumber2,phone number 2 (second part),,,b524,020000007000,value,,IGN:4,,,,value,,STR:6,,,Installer's telephone number
-w,,,PhoneNumber2,phone number 2 (second part),,,b524,020100007000,value,,STR:6,,,Installer's telephone number
+w,,install,PhoneNumber2,phone number 2 (second part),,,b524,020100007000,value,,STR:6,,,Installer's telephone number
 r,,,OutsideTemp,outside temperature,,,b524,020000007300,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,KeyCodeforConfigMenu,code for installer menu,,,b524,020000007600,value,,IGN:4,,,,value,,UIN,,,000-999; code for the installer's menues
-w,,,KeyCodeforConfigMenu,code for installer menu,,,b524,020100007600,value,,UIN,,,000-999; code for the installer's menues
+r,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020000007600,value,,IGN:4,,,,value,,UIN,,,000-999; code for the installer's menues
+w,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020100007600,value,,UIN,,,000-999; code for the installer's menues
 r,,,OutsideTempAvg,average outside temperature,,,b524,020000009500,value,,IGN:4,,,,value,,EXP,,°C,Average outside temperature (updated every 3h)
-w,,,OutsideTempAvg,average outside temperature,,,b524,020100009500,value,,EXP,,°C,Average outside temperature (updated every 3h)
 r,,,MaintenanceDue,maintenance due,,,b524,020000009600,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 r,,,GreenIQ,green iq,,,b524,020000009a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,HwcCylinderTempTop,hwc cylinder temperature top,,,b524,020000009d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,HwcCylinderTempBottom,hwc cylinder temperature bottom,,,b524,020000009e00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,HcStorageTempTop,hc storage temperature top,,,b524,020000009f00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,HcStorageTempBottom,hc storage temperature bottom,,,b524,02000000a000,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,HwcCylinderOffset,offset hwc cylinder charge,,,b524,02000000a200,value,,IGN:4,,,,value,,EXP,,K,
-w,,,HwcCylinderOffset,offset hwc cylinder charge,,,b524,02010000a200,value,,EXP,,K,
+r,,,HcCylinderTempTop,hc cylinder temperature top,,,b524,020000009f00,value,,IGN:4,,,,value,,EXP,,°C,temperature
+r,,,HcCylinderTempBottom,hc cylinder temperature bottom,,,b524,02000000a000,value,,IGN:4,,,,value,,EXP,,°C,temperature
+r,,,BufferChargeOffset,offset buffer charge,,,b524,02000000a200,value,,IGN:4,,,,value,,EXP,,K,
+w,,,BufferChargeOffset,offset buffer charge,,,b524,02010000a200,value,,EXP,,K,
 r,,,HwcEnabled,hwc enabled,,,b524,020001000100,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,HwcEnabled,hwc enabled,,,b524,020101000100,value,,UCH,0=no;1=yes,,
 r,,,HwcCircPumpStatus,hwc circulation pump status,,,b524,020001000200,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
@@ -140,8 +140,8 @@ r,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020002000f00,value,,IGN:4,,,
 w,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020102000f00,value,,EXP,,,
 r,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020002001000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1
 w,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020102001000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc1
-r,,,Hc1CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 1,,,b524,020002001100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc1CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 1,,,b524,020102001100,value,,EXP,,°C,temperature
+r,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020002001100,value,,IGN:4,,,,value,,EXP,,°C,temperature
+w,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020102001100,value,,EXP,,°C,temperature
 r,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020002001200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1
 w,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020102001200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc1
 r,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020002001300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
@@ -182,8 +182,8 @@ r,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020002010f00,value,,IGN:4,,,
 w,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020102010f00,value,,EXP,,,
 r,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020002011000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2
 w,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020102011000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc2
-r,,,Hc2CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 2,,,b524,020002011100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc2CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 2,,,b524,020102011100,value,,EXP,,°C,temperature
+r,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020002011100,value,,IGN:4,,,,value,,EXP,,°C,temperature
+w,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020102011100,value,,EXP,,°C,temperature
 r,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020002011200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2
 w,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020102011200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc2
 r,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020002011300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
@@ -224,8 +224,8 @@ r,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020002020f00,value,,IGN:4,,,
 w,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020102020f00,value,,EXP,,,
 r,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020002021000,value,,IGN:4,,,,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3
 w,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020102021000,value,,EXP,,°C,Maximum flow temperature setpoint (end emphasis) of Hc3
-r,,,Hc3CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 3,,,b524,020002021100,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc3CoolingFlowTempMax,CoolingMaxFlowTempDesired heating circuit 3,,,b524,020102021100,value,,EXP,,°C,temperature
+r,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020002021100,value,,IGN:4,,,,value,,EXP,,°C,temperature
+w,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020102021100,value,,EXP,,°C,temperature
 r,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020002021200,value,,IGN:4,,,,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3
 w,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020102021200,value,,EXP,,°C,Minimum flow temperature setpoint (end emphasis) of Hc3
 r,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020002021300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
