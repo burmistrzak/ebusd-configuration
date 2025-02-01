@@ -3,11 +3,17 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *w,
 *[hwcenabled],,,hwcenabled,,value
 *[hc1circuittype],,,hc1circuittype,,value
+*[hc1exthwcactive],,,hc1exthwcactive,,value
 *[hc1coolingenabled],,,hc1coolingenabled,,value
+*[hc1dewpointmonitoring],,,hc1dewpointmonitoring,,value
+*[hc2exthwcactive],,,hc2exthwcactive,,value
 *[hc2circuittype],,,hc2circuittype,,value
 *[hc2coolingenabled],,,hc2coolingenabled,,value
+*[hc2dewpointmonitoring],,,hc2dewpointmonitoring,,value
 *[hc3circuittype],,,hc3circuittype,,value
+*[hc3exthwcactive],,,hc3exthwcactive,,value
 *[hc3coolingenabled],,,hc3coolingenabled,,value
+*[hc3dewpointmonitoring],,,hc3dewpointmonitoring,,value
 r,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020000000100,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,value,,EXP,,°C,temperature
 r,,install,ContinuosHeating,continuos heating,,,b524,020000000200,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -17,18 +23,18 @@ w,,install,FrostOverrideTime,frost delay time,,,b524,020100000300,value,,UIN,,h,
 r,,,GlobalSystemOff,Global System OFF,,,b524,020000000700,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,GlobalSystemOff,Global System OFF,,,b524,020100000700,value,,UCH,0=no;1=yes,,
 r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,install,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
+w,,,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
 r,,install,MaxRoomHumidity,max room humidity,,,b524,020000000e00,value,,IGN:4,,,,value,,UIN,,,
 w,,install,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,
 r,,install,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,value,,UCH,0=trivalence;1=bivalence,,hybrid manager mode
 w,,install,HybridManager,hybrid manager,,,b524,020100000f00,value,,UCH,0=trivalence;1=bivalence,,hybrid manager mode
 r,,install,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,
 r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
-w,,install,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,
+w,,,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,
 r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,install,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
+w,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
 r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,install,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
+w,,,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
 r,,install,PumpAdditionalTime,pump additional time,,,b524,020000001b00,value,,IGN:4,,,,value,,UIN,,min,minutes
 w,,install,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,minutes
 r,,install,HcAlternativePoint,hc alternative point,,,b524,020000002200,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -45,8 +51,8 @@ r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IG
 w,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
 r,,,HwcLegionellaTime,hwc legionella time,,,b524,020000002a00,value,,IGN:4,,,,value,,HTM,,,
 w,,,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
-r,,,HwcLegionellaDay,ohwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
-w,,,HwcLegionellaDay,ohwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
+r,,,HwcLegionellaDay,hwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
+w,,,HwcLegionellaDay,hwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
 r,,,MaintenanceDate,next maintenance,,,b524,020000002c00,value,,IGN:4,,,,value,,HDA:3,,,date
 w,,,MaintenanceDate,next maintenance,,,b524,020100002c00,value,,HDA:3,,,date
 r,,,OffsetOutsideTemp,offset outside temperature,,,b524,020000002d00,value,,IGN:4,,,,value,,EXP,,K,
@@ -65,10 +71,10 @@ r,,,EnvYieldTotal,total environmental yield,,,b524,020000003e00,value,,IGN:4,,,,
 r,,,ESCO,esco block function,,,b524,020000004500,value,,IGN:4,,,,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
 w,,,ESCO,esco block function,,,b524,020100004500,value,,UCH,0=heatpump;1=backup;2=heatpumpandbackup;3=heat;4=cool;5=heatandcool,,ESCO
 r,,,HwcFlowTempMax,hwc max flow temp,,,b524,020000004600,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,install,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,temperature
+w,,,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,temperature
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,install,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
+w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
 r,,,PrFuelSumHcThisMonth,this month's fuel consumption heating,,,b524,020000004e00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,PrEnergySumHcThisMonth,this month's energy consumption heating,,,b524,020000004f00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,PrEnergySumHwcThisMonth,this month's energy consumption hot water,,,b524,020000005000,value,,IGN:4,,,,value,,ULG,,kWh,
@@ -82,13 +88,13 @@ r,,,PrEnergySumHc,total energy consumption heating,,,b524,020000005700,value,,IG
 r,,,PrEnergySumHwc,total energy consumption hot water,,,b524,020000005800,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,PrFuelSumHwc,total fuel consumption hot water,,,b524,020000005900,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,Installer1,installer name 1,,,b524,020000006c00,value,,IGN:4,,,,value,,STR:6,,,name
-w,,install,Installer1,installer name 1,,,b524,020100006c00,value,,STR:6,,,name
+w,,,Installer1,installer name 1,,,b524,020100006c00,value,,STR:6,,,name
 r,,,Installer2,installer name 2,,,b524,020000006d00,value,,IGN:4,,,,value,,STR:6,,,name
-w,,install,Installer2,installer name 2,,,b524,020100006d00,value,,STR:6,,,name
+w,,,Installer2,installer name 2,,,b524,020100006d00,value,,STR:6,,,name
 r,,,PhoneNumber1,phone number 1 (first part),,,b524,020000006f00,value,,IGN:4,,,,value,,STR:6,,,phone number
-w,,install,PhoneNumber1,phone number 1 (first part),,,b524,020100006f00,value,,STR:6,,,phone number
+w,,,PhoneNumber1,phone number 1 (first part),,,b524,020100006f00,value,,STR:6,,,phone number
 r,,,PhoneNumber2,phone number 2 (second part),,,b524,020000007000,value,,IGN:4,,,,value,,STR:6,,,phone number
-w,,install,PhoneNumber2,phone number 2 (second part),,,b524,020100007000,value,,STR:6,,,phone number
+w,,,PhoneNumber2,phone number 2 (second part),,,b524,020100007000,value,,STR:6,,,phone number
 r,,,OutsideTemp,outside temperature,,,b524,020000007300,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020000007600,value,,IGN:4,,,,value,,UIN,,,
 w,,install,KeyCodeforConfigMenu,code for installer menu,,,b524,020100007600,value,,UIN,,,
@@ -131,18 +137,19 @@ r,,,Hc1CoolingEnabled,CoolingEnabled heating circuit 1,,,b524,020002000600,value
 w,,,Hc1CoolingEnabled,CoolingEnabled heating circuit 1,,,b524,020102000600,value,,UCH,0=off;1=on,,
 r,,,Hc1FlowTempTarget,ActualFlowTempDesired heating circuit 1,,,b524,020002000700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc1FlowTemp,FlowTemp heating circuit 1,,,b524,020002000800,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020102000900,value,,EXP,,°C,temperature
-[hc1circuittype=1][hc1coolingenabled=1]r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc1circuittype=1][hc1coolingenabled=1]w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,value,,EXP,,K,
+[hc1exthwcactive=1]r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1exthwcactive=1]w,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020102000900,value,,EXP,,°C,temperature
+r,,,Hc1ExtHwcActive,ExtHwcActive heating circuit 1,,,b524,020002001800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc1circuittype=1][hc1coolingenabled=1][hc1dewpointmonitoring=1]r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc1circuittype=1][hc1coolingenabled=1][hc1dewpointmonitoring=1]w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,value,,EXP,,K,
 [hc1circuittype=1]r,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020002000b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc1circuittype=1]w,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020102000b00,value,,EXP,,K,
 [hc1circuittype=2]r,,,Hc1FixedDesiredTemp,DesiredTemp heating circuit 1,,,b524,020002000c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1circuittype=2]w,,,Hc1FixedDesiredTemp,DesiredTemp heating circuit 1,,,b524,020102000c00,value,,EXP,,°C,temperature
 [hc1circuittype=2]r,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020002000d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1circuittype=2]w,,,Hc1FixedSetbackTemp,DesiredSetbackTemp heating circuit 1,,,b524,020102000d00,value,,EXP,,°C,temperature
-r,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020002000e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
-w,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020102000e00,value,,UIN,0=eco;1=normal,,
+[hc1circuittype=1]r,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020002000e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
+[hc1circuittype=1]w,,,Hc1SetbackMode,SetbackMode heating circuit 1,,,b524,020102000e00,value,,UIN,0=eco;1=normal,,
 r,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020002000f00,value,,IGN:4,,,,value,,EXP,,,
 w,,,Hc1HeatCurve,HeatCurve heating circuit 1,,,b524,020102000f00,value,,EXP,,,
 r,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020002001000,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -151,13 +158,12 @@ w,,,Hc1HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 1,,,b524,020
 [hc1circuittype=1][hc1coolingenabled=1]w,,,Hc1CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 1,,,b524,020102001100,value,,EXP,,°C,temperature
 r,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020002001200,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020102001200,value,,EXP,,°C,temperature
-r,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020002001300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
-w,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020102001300,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc1exthwcactive=1]r,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020002001300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc1exthwcactive=1]w,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020102001300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020002001400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020102001400,value,,EXP,,°C,temperature
 r,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020102001500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc1ExtHwcActive,ExtHwcActive heating circuit 1,,,b524,020002001800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc1ExtHeatDemand,ExtHeatDemand heating circuit 1,,,b524,020002001900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc1circuittype=1]r,,,Hc1MixerMovement,MixerMovement heating circuit 1,,,b524,020002001a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc1HeatCurveAdaption,HeatCurveAdaption heating circuit 1,,,b524,020002001c00,value,,IGN:4,,,,value,,EXP,,,
@@ -173,18 +179,19 @@ r,,,Hc2CoolingEnabled,CoolingEnabled heating circuit 2,,,b524,020002010600,value
 w,,,Hc2CoolingEnabled,CoolingEnabled heating circuit 2,,,b524,020102010600,value,,UCH,0=off;1=on,,
 r,,,Hc2FlowTempTarget,ActualFlowTempDesired heating circuit 2,,,b524,020002010700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc2FlowTemp,FlowTemp heating circuit 2,,,b524,020002010800,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020102010900,value,,EXP,,°C,temperature
-[hc2circuittype=1][hc2coolingenabled=1]r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc2circuittype=1][hc2coolingenabled=1]w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,value,,EXP,,K,
+[hc2exthwcactive=1]r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2exthwcactive=1]w,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020102010900,value,,EXP,,°C,temperature
+r,,,Hc2ExtHwcActive,ExtHwcActive heating circuit 2,,,b524,020002011800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc2circuittype=1][hc2coolingenabled=1][hc2dewpointmonitoring=1]r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc2circuittype=1][hc2coolingenabled=1][hc2dewpointmonitoring=1]w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,value,,EXP,,K,
 [hc2circuittype=1]r,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020002010b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc2circuittype=1]w,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020102010b00,value,,EXP,,K,
 [hc2circuittype=2]r,,,Hc2FixedDesiredTemp,DesiredTemp heating circuit 2,,,b524,020002010c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2circuittype=2]w,,,Hc2FixedDesiredTemp,DesiredTemp heating circuit 2,,,b524,020102010c00,value,,EXP,,°C,temperature
 [hc2circuittype=2]r,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020002010d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2circuittype=2]w,,,Hc2FixedSetbackTemp,DesiredSetbackTemp heating circuit 2,,,b524,020102010d00,value,,EXP,,°C,temperature
-r,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020002010e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
-w,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020102010e00,value,,UIN,0=eco;1=normal,,
+[hc2circuittype=1]r,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020002010e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
+[hc2circuittype=1]w,,,Hc2SetbackMode,SetbackMode heating circuit 2,,,b524,020102010e00,value,,UIN,0=eco;1=normal,,
 r,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020002010f00,value,,IGN:4,,,,value,,EXP,,,
 w,,,Hc2HeatCurve,HeatCurve heating circuit 2,,,b524,020102010f00,value,,EXP,,,
 r,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020002011000,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -193,13 +200,12 @@ w,,,Hc2HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 2,,,b524,020
 [hc2circuittype=1][hc2coolingenabled=1]w,,,Hc2CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 2,,,b524,020102011100,value,,EXP,,°C,temperature
 r,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020002011200,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020102011200,value,,EXP,,°C,temperature
-r,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020002011300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
-w,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020102011300,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc2exthwcactive=1]r,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020002011300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc2exthwcactive=1]w,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020102011300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020002011400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020102011400,value,,EXP,,°C,temperature
 r,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020102011500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc2ExtHwcActive,ExtHwcActive heating circuit 2,,,b524,020002011800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc2ExtHeatDemand,ExtHeatDemand heating circuit 2,,,b524,020002011900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc2circuittype=1]r,,,Hc2MixerMovement,MixerMovement heating circuit 2,,,b524,020002011a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc2HeatCurveAdaption,HeatCurveAdaption heating circuit 2,,,b524,020002011c00,value,,IGN:4,,,,value,,EXP,,,
@@ -215,18 +221,19 @@ r,,,Hc3CoolingEnabled,CoolingEnabled heating circuit 3,,,b524,020002020600,value
 w,,,Hc3CoolingEnabled,CoolingEnabled heating circuit 3,,,b524,020102020600,value,,UCH,0=off;1=on,,
 r,,,Hc3FlowTempTarget,ActualFlowTempDesired heating circuit 3,,,b524,020002020700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc3FlowTemp,FlowTemp heating circuit 3,,,b524,020002020800,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,temperature
-w,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020102020900,value,,EXP,,°C,temperature
-[hc3circuittype=1][hc3coolingenabled=1]r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc3circuittype=1][hc3coolingenabled=1]w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,value,,EXP,,K,
+[hc3exthwcactive=1]r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3exthwcactive=1]w,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020102020900,value,,EXP,,°C,temperature
+r,,,Hc3ExtHwcActive,ExtHwcActive heating circuit 3,,,b524,020002021800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc3circuittype=1][hc3coolingenabled=1][hc3dewpointmonitoring=1]r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc3circuittype=1][hc3coolingenabled=1][hc3dewpointmonitoring=1]w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,value,,EXP,,K,
 [hc3circuittype=1]r,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020002020b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc3circuittype=1]w,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020102020b00,value,,EXP,,K,
 [hc3circuittype=2]r,,,Hc3FixedDesiredTemp,DesiredTemp heating circuit 3,,,b524,020002020c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3circuittype=2]w,,,Hc3FixedDesiredTemp,DesiredTemp heating circuit 3,,,b524,020102020c00,value,,EXP,,°C,temperature
 [hc3circuittype=2]r,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020002020d00,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3circuittype=2]w,,,Hc3FixedSetbackTemp,DesiredSetbackTemp heating circuit 3,,,b524,020102020d00,value,,EXP,,°C,temperature
-r,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020002020e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
-w,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020102020e00,value,,UIN,0=eco;1=normal,,
+[hc3circuittype=1]r,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020002020e00,value,,IGN:4,,,,value,,UIN,0=eco;1=normal,,
+[hc3circuittype=1]w,,,Hc3SetbackMode,SetbackMode heating circuit 3,,,b524,020102020e00,value,,UIN,0=eco;1=normal,,
 r,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020002020f00,value,,IGN:4,,,,value,,EXP,,,
 w,,,Hc3HeatCurve,HeatCurve heating circuit 3,,,b524,020102020f00,value,,EXP,,,
 r,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020002021000,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -235,13 +242,12 @@ w,,,Hc3HeatingFlowTempMax,HeatingMaxFlowTempDesired heating circuit 3,,,b524,020
 [hc3circuittype=1][hc3coolingenabled=1]w,,,Hc3CoolingFlowTempMin,CoolingMinFlowTempDesired heating circuit 3,,,b524,020102021100,value,,EXP,,°C,temperature
 r,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020002021200,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020102021200,value,,EXP,,°C,temperature
-r,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020002021300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
-w,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020102021300,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc3exthwcactive=1]r,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020002021300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
+[hc3exthwcactive=1]w,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020102021300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020002021400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020102021400,value,,EXP,,°C,temperature
 r,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020102021500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc3ExtHwcActive,ExtHwcActive heating circuit 3,,,b524,020002021800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 r,,,Hc3ExtHeatDemand,ExtHeatDemand heating circuit 3,,,b524,020002021900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc3circuittype=1]r,,,Hc3MixerMovement,MixerMovement heating circuit 3,,,b524,020002021a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc3HeatCurveAdaption,HeatCurveAdaption heating circuit 3,,,b524,020002021c00,value,,IGN:4,,,,value,,EXP,,,
@@ -278,7 +284,7 @@ r,,,Z1Name1,zone 1 label (first part),,,b524,020003001700,value,,IGN:4,,,,value,
 w,,,Z1Name1,zone 1 label (first part),,,b524,020103001700,value,,STR:5,,,zone name
 r,,,Z1Name2,zone 1 label (second part),,,b524,020003001800,value,,IGN:4,,,,value,,STR:5,,,zone name
 w,,,Z1Name2,zone 1 label (second part),,,b524,020103001800,value,,STR:5,,,zone name
-r,,,Z1Status,zone 1 status,,,b524,020003001b00,value,,IGN:4,,,,value,,UIN,0=auto;1=ventilation;3=party;4=veto;5=onedayaway;6=onedayathome;7=holidayaway;8=holidayathome;9=load;10=off,,
+r,,,Z1Status,zone 1 status,,,b524,020003001b00,value,,IGN:4,,,,value,,UIN,0=auto;1=ventilation;4=veto;7=holidayaway;9=load;10=off,,
 [hc1circuittype=1]r,,,Z1QuickVetoEndTime,quick veto end time zone 1,,,b524,020003001e00,value,,IGN:4,,,,value,,HTI,,,
 [hc1circuittype=1]r,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020003002000,value,,IGN:4,,,,value,,HTI,,,
 [hc1circuittype=1]w,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020103002000,value,,HTI,,,
@@ -322,7 +328,7 @@ r,,,Z2Name1,zone 2 label (first part),,,b524,020003011700,value,,IGN:4,,,,value,
 w,,,Z2Name1,zone 2 label (first part),,,b524,020103011700,value,,STR:5,,,zone name
 r,,,Z2Name2,zone 2 label (second part),,,b524,020003011800,value,,IGN:4,,,,value,,STR:5,,,zone name
 w,,,Z2Name2,zone 2 label (second part),,,b524,020103011800,value,,STR:5,,,zone name
-r,,,Z2Status,zone 2 status,,,b524,020003011b00,value,,IGN:4,,,,value,,UIN,0=auto;7=holidayaway;9=load;10=off,,
+r,,,Z2Status,zone 2 status,,,b524,020003011b00,value,,IGN:4,,,,value,,UIN,0=auto;1=ventilation;4=veto;7=holidayaway;9=load;10=off,,
 [hc2circuittype=1]r,,,Z2QuickVetoEndTime,quick veto end time zone 2,,,b524,020003011e00,value,,IGN:4,,,,value,,HTI,,,
 [hc2circuittype=1]r,,,Z2HolidayEndTime,end time of holidays for zone 2,,,b524,020003012000,value,,IGN:4,,,,value,,HTI,,,
 [hc2circuittype=1]w,,,Z2HolidayEndTime,end time of holidays for zone 2,,,b524,020103012000,value,,HTI,,,
@@ -366,7 +372,7 @@ r,,,Z3Name1,zone 3 label (first part),,,b524,020003021700,value,,IGN:4,,,,value,
 w,,,Z3Name1,zone 3 label (first part),,,b524,020103021700,value,,STR:5,,,zone name
 r,,,Z3Name2,zone 3 label (second part),,,b524,020003021800,value,,IGN:4,,,,value,,STR:5,,,zone name
 w,,,Z3Name2,zone 3 label (second part),,,b524,020103021800,value,,STR:5,,,zone name
-r,,,Z3Status,zone 3 status,,,b524,020003021b00,value,,IGN:4,,,,value,,UIN,0=auto;7=holidayaway;9=load;10=off,,
+r,,,Z3Status,zone 3 status,,,b524,020003021b00,value,,IGN:4,,,,value,,UIN,0=auto;1=ventilation;4=veto;7=holidayaway;9=load;10=off,,
 [hc3circuittype=1]r,,,Z3QuickVetoEndTime,quick veto end time zone 3,,,b524,020003021e00,value,,IGN:4,,,,value,,HTI,,,
 [hc3circuittype=1]r,,,Z3HolidayEndTime,end time of holidays for zone 3,,,b524,020003022000,value,,IGN:4,,,,value,,HTI,,,
 [hc3circuittype=1]w,,,Z3HolidayEndTime,end time of holidays for zone 3,,,b524,020103022000,value,,HTI,,,
@@ -381,38 +387,38 @@ r,,,Z3Status,zone 3 status,,,b524,020003021b00,value,,IGN:4,,,,value,,UIN,0=auto
 [hc3circuittype=1]w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,value,,EXP,,h,
 r,,,Z3RoomHumidity,room humidity zone 3,,,b524,020003022800,value,,IGN:4,,,,value,,EXP,,%,percentage
 r,,,UnknownValue_a0,,,,b555,a0,value,,HEX:8,,,
-r,,,HwcTimer_Config,hwc timer Configuration,,,b555,a30002,value,,HEX:9,,,Configuration
-r,,,HwcTimer_TimeSlotsPerWeekday,hwc timer amount,,,b555,a40002,ign,,IGN:1,,,Amount of configured slots per weekday,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_1,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_2,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_3,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_4,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_5,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_6,,UCH,,,Number of total slots in the array. May be Zero.,ign_1,,IGN:1,,,
-r,,,HwcTimer_Monday,hwc timer monday read,,,b555,a500020000,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_MondayWrite,hwc timer monday write,,,b555,a600020000,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Tuesday,hwc timer tuesday read,,,b555,a500020100,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_TuesdayWrite,hwc timer tuesday write,,,b555,a600020100,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Wednesday,hwc timer wednesday read,,,b555,a500020200,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_WednesdayWrite,hwc timer wednesday write,,,b555,a600020200,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Thursday,hwc timer thursday read,,,b555,a500020300,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_ThursdayWrite,hwc timer thursday write,,,b555,a600020300,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Friday,hwc timer friday read,,,b555,a500020400,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_FridayWrite,hwc timer friday write,,,b555,a600020400,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Saturday,hwc timer saturday read,,,b555,a500020500,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_SaturdayWrite,hwc timer saturday write,,,b555,a600020500,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,HwcTimer_Sunday,hwc timer sunday read,,,b555,a500020600,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,HwcTimer_SundayWrite,hwc timer sunday write,,,b555,a600020600,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Config,cc timer Configuration,,,b555,a30003,value,,HEX:9,,,Configuration
-r,,,CcTimer_Timeframes,cc timer amount,,,b555,a40003,ign,,IGN:1,,,Amount of configured slots per weekday,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_1,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_2,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_3,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_4,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_5,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_6,,UCH,,,Number of total slots in the array. May be Zero.,ign_1,,IGN:1,,,
-r,,,CcTimer_Monday,cc timer monday read,,,b555,a500030000,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_MondayWrite,cc timer monday write,,,b555,a600030000,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Tuesday,cc timer tuesday read,,,b555,a500030100,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_TuesdayWrite,cc timer tuesday write,,,b555,a600030100,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Wednesday,cc timer wednesday read,,,b555,a500030200,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_WednesdayWrite,cc timer wednesday write,,,b555,a600030200,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Thursday,cc timer thursday read,,,b555,a500030300,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_ThursdayWrite,cc timer thursday write,,,b555,a600030300,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Friday,cc timer friday read,,,b555,a500030400,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_FridayWrite,cc timer friday write,,,b555,a600030400,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Saturday,cc timer saturday read,,,b555,a500030500,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_SaturdayWrite,cc timer saturday write,,,b555,a600030500,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
-r,,,CcTimer_Sunday,cc timer sunday read,,,b555,a500030600,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
-w,,,CcTimer_SundayWrite,cc timer sunday write,,,b555,a600030600,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Config,hwc timer Configuration,,,b555,a30002,value,,HEX:9,,,Configuration
+[hwcenabled=1]r,,,HwcTimer_TimeSlotsPerWeekday,hwc timer amount,,,b555,a40002,ign,,IGN:1,,,Amount of configured slots per weekday,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_1,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_2,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_3,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_4,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_5,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_6,,UCH,,,Number of total slots in the array. May be Zero.,ign_1,,IGN:1,,,
+[hwcenabled=1]r,,,HwcTimer_Monday,hwc timer monday read,,,b555,a500020000,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_MondayWrite,hwc timer monday write,,,b555,a600020000,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Tuesday,hwc timer tuesday read,,,b555,a500020100,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_TuesdayWrite,hwc timer tuesday write,,,b555,a600020100,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Wednesday,hwc timer wednesday read,,,b555,a500020200,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_WednesdayWrite,hwc timer wednesday write,,,b555,a600020200,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Thursday,hwc timer thursday read,,,b555,a500020300,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_ThursdayWrite,hwc timer thursday write,,,b555,a600020300,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Friday,hwc timer friday read,,,b555,a500020400,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_FridayWrite,hwc timer friday write,,,b555,a600020400,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Saturday,hwc timer saturday read,,,b555,a500020500,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_SaturdayWrite,hwc timer saturday write,,,b555,a600020500,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,HwcTimer_Sunday,hwc timer sunday read,,,b555,a500020600,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,HwcTimer_SundayWrite,hwc timer sunday write,,,b555,a600020600,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Config,cc timer Configuration,,,b555,a30003,value,,HEX:9,,,Configuration
+[hwcenabled=1]r,,,CcTimer_Timeframes,cc timer amount,,,b555,a40003,ign,,IGN:1,,,Amount of configured slots per weekday,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_1,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_2,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_3,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_4,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_5,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_6,,UCH,,,Number of total slots in the array. May be Zero.,ign_1,,IGN:1,,,
+[hwcenabled=1]r,,,CcTimer_Monday,cc timer monday read,,,b555,a500030000,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_MondayWrite,cc timer monday write,,,b555,a600030000,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Tuesday,cc timer tuesday read,,,b555,a500030100,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_TuesdayWrite,cc timer tuesday write,,,b555,a600030100,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Wednesday,cc timer wednesday read,,,b555,a500030200,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_WednesdayWrite,cc timer wednesday write,,,b555,a600030200,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Thursday,cc timer thursday read,,,b555,a500030300,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_ThursdayWrite,cc timer thursday write,,,b555,a600030300,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Friday,cc timer friday read,,,b555,a500030400,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_FridayWrite,cc timer friday write,,,b555,a600030400,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Saturday,cc timer saturday read,,,b555,a500030500,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_SaturdayWrite,cc timer saturday write,,,b555,a600030500,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
+[hwcenabled=1]r,,,CcTimer_Sunday,cc timer sunday read,,,b555,a500030600,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
+[hwcenabled=1]w,,,CcTimer_SundayWrite,cc timer sunday write,,,b555,a600030600,slotindex,,UCH,,,array index for the zones. Array Index start at 0 for the first element,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,htm,,HTM,,,,htm_1,,HTM,,,,hex,,HEX:2,,,
 r,,,SilentTimer_Config,silent timer Configuration,,,b555,a30004,value,,HEX:9,,,Configuration
 r,,,SilentTimer_Timeframes,silent timer amount,,,b555,a40004,ign,,IGN:1,,,Amount of configured slots per weekday,slotcount,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_1,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_2,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_3,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_4,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_5,,UCH,,,Number of total slots in the array. May be Zero.,slotcount_6,,UCH,,,Number of total slots in the array. May be Zero.,ign_1,,IGN:1,,,
 r,,,SilentTimer_Monday,silent timer monday read,,,b555,a500040000,ign,,IGN:1,,,,htm,,HTM,,,,htm_1,,HTM,,,,ign_1,,IGN:2,,,
