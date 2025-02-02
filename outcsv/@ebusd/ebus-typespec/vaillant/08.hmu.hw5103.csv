@@ -6,6 +6,7 @@ r,,,EevPositionAbs,,,,b509,540200280a,value,,IGN:4,,,,value,,UIN,,,
 r,,,Fan1Speed,,,,b509,540200470a,value,,IGN:4,,,,value,,EXP,,rpm,
 r,,,Fan2Speed,,,,b509,540200490a,value,,IGN:4,,,,value,,EXP,,rpm,
 r,,,Statuscode,,,,b509,540200530d,value,,IGN:4,,,,value,,UIN,34=frost_protect;100=standby;101=heat_compressor_shutdown;102=heat_compressor_blocked;103=heat_prerun;104=heat_compressor_active;107=heat_overrun;111=cool_compressor_shutdown;112=cool_compressor_blocked;113=cool_prerun;114=cool_compressor_active;117=cool_overrun;125=heat_immersion_heater_active;132=hwc_compressor_blocked;133=hwc_prerun;134=hwc_compressor_active;135=hwc_immersion_heater_active;137=hwc_overrun;141=heat_immersion_heater_shutdown;142=heat_immersion_heater_blocked;151=hwc_immersion_heater_shutdown;152=hwc_immersion_heater_blocked;202=air_purging_program_active;240=compressor_oil_heating_activated;252=fan1_blocked;255=fan1_airinlet_too_high;256=fan1_airinlet_too_low;260=fan2_blocked;275=building_circuit_flow_too_low;277=building_circuit_pump_fault;280=frequency_converter_fault_compressor;281=frequency_converter_fault_mains_voltage;282=frequency_converter_fault_overheating;283=deicing_time_too_long;284=deicing_flow_temperature_too_low;285=compressor_outlet_temperature_too_high;286=hot_gas_temperature_switch_open;287=fan1_wind;288=fan2_wind;289=current_limt_active;302=high_pressure_switch_open;303=compressor_outlet_temperature_too_high_1;304=evaporation_temperature_too_low;305=condensation_temperature_too_low;306=evaporation_temperature_too_high;308=condensation_temperature_too_high;312=building_circuit_return_temperature_too_low;314=building_circuit_return_temperature_too_high;351=immersion_heater_flow_temperature_too_high;516=deicing_active;575=frequency_converter_fault;581=connection_fault_frequency_converter;590=four_port_valve_position_fault,,HMU Status code
+r,,,PowerConsumptionHMU,,,,b509,5402005b0d,value,,IGN:4,,,,value,,EXP,,W,
 r,,,HighPressure,,,,b509,5402006a09,value,,IGN:4,,,,value,,EXP,,bar,pressure
 r,,,CompressorInletTemp,,,,b509,5402009808,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,CompressorOutletTemp,,,,b509,540200a208,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -28,7 +29,6 @@ r,,,AirInletTemp,,,,b509,540200de08,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Status,,,,b511,01,supplytemp,,D1C,,°C,temperature,returntemp,,D1C,,°C,temperature,ign,,IGN:4,,,,pumpstate,,UCH,0=off;1=on;2=overrun;4=hwc,,pump state
 [id_sw>=902]r,,,CompressorHc,,,,b511,1801,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
 [id_sw>=902]r,,,CompressorHwc,,,,b511,1802,ign,,IGN:1,,,,runtime,,ULG,,min,minutes,cycles,,ULG,,,start count
-r,,,PowerConsumptionHmu,,,,b516,14,value,,IGN:1,,,,value,,EXP,,W,
 r,,,YieldHeatingDay,,,,b51a,05ff3200,value,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,YieldCoolingDay,,,,b51a,05ff3201,value,,IGN:3,,,,value,,UIN,10,kWh,
 r,,,YieldHwcDay,,,,b51a,05ff3202,value,,IGN:3,,,,value,,UIN,10,kWh,
