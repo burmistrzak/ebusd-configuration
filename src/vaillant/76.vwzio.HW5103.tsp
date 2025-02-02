@@ -16,6 +16,7 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
+/**
   @inherit(r_0)
   @ext(0x6, 0x9)
   model DiagFlowTemp {
@@ -40,7 +41,6 @@ namespace Vwzio.Hw5103 {
     value: hoursum2;
   }
 
-/**
   @inherit(r_0)
   @ext(0xb9, 0xb)
   model DiagHcHours {
@@ -48,6 +48,14 @@ namespace Vwzio.Hw5103 {
   }
 */
 
+  @inherit(r_0)
+  @ext(0x5b, 0xd)
+  model PowerConsumptionVWZ {
+    @unit("W")
+    value: EXP;
+  }
+
+/**
   @inherit(r_0)
   @ext(0xbd, 0xb)
   model DiagImmersionHeaterHours {
@@ -65,6 +73,7 @@ namespace Vwzio.Hw5103 {
   model DiagPrioritySwitchingValveOps {
     value: cntstarts2;
   }
+*/
 
   // B511
   /** default *r */
@@ -79,12 +88,14 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
+/**
   @inherit(r_2)
   @ext(0x14)
   model PowerConsumptionVwz {
     @unit("W")
     value: EXP;
   }
+*/
 
   // B51A FF32xx
   /** default *r */
@@ -110,7 +121,7 @@ namespace Vwzio.Hw5103 {
 
   @inherit(r_3)
   @ext(0x49)
-  model ImmersionHeaterEnergyUsage {
+  model ImmersionHeaterEnergy {
     @unit("kWh")
     value: energy;
   }
@@ -155,15 +166,10 @@ namespace Vwzio.Hw5103 {
   @base(MF, 0x1a, 0x6, 0xff, 0x34)
   model w_4 {}
 
-  @inherit(r_4)
+  @inherit(r_4, w_4)
   @ext(0x5c)
   model HwcMode {
     value: hwcmode3;
   }
 
-  @inherit(w_4)
-  @ext(0x5c)
-  model HwcModeWrite {
-    value: hwcmode3;
-  }
 }
