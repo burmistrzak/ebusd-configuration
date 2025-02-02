@@ -49,14 +49,12 @@ namespace Hmu.Hw5103 {
     value: hmucode;
   }
 
-/**
   @inherit(r_0)
   @ext(0x5b, 0xd)
-  model ElectricPowerConsumption {
+  model PowerConsumptionHMU {
     @unit("W")
     value: EXP;
   }
-*/
 
   @inherit(r_0)
   @ext(0x6a, 0x9)
@@ -242,12 +240,14 @@ namespace Hmu.Hw5103 {
     value: IGN;
   }
 
+/**
   @inherit(r_2)
   @ext(0x14)
   model PowerConsumptionHmu {
     @unit("W")
     value: EXP;
   }
+*/
 
   // B51A FF32xx
   /** default *r */
