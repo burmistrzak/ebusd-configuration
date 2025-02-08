@@ -452,6 +452,9 @@ scalar shortphone extends STR;
 @values(Values_mamode)
 scalar mamode extends UIN;
 
+@values(Values_mamode2)
+scalar mamode2 extends UIN;
+
 @values(Values_offmode)
 scalar offmode extends UIN;
 
@@ -850,6 +853,15 @@ enum Values_mamode {
   dryer: 1,
   zone: 2,
   legiopump: 3,
+}
+
+enum Values_mamode2 {
+  circulation_pump: 0,
+  dehumidifier: 1,
+  zone: 2,
+  anti_legio_pump: 3,
+  not_connected: 4,
+  active_cool_period: 5,
 }
 
 enum Values_offmode {
