@@ -2,19 +2,23 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *r,
 *w,
 *[hwcenabled],,,hwcenabled,,value
+*[mo2],,,mo2,,value
 *[hc1circuittype],,,hc1circuittype,,value
-*[hc1exthwcactive],,,hc1exthwcactive,,value
 *[hc1coolingenabled],,,hc1coolingenabled,,value
+*[hc1roomtempmod],,,hc1roomtempmod,,value
+*[hc1exthwcactive],,,hc1exthwcactive,,value
 *[hc1dewpointmonitoring],,,hc1dewpointmonitoring,,value
-*[hc2exthwcactive],,,hc2exthwcactive,,value
 *[hc2circuittype],,,hc2circuittype,,value
 *[hc2coolingenabled],,,hc2coolingenabled,,value
+*[hc2roomtempmod],,,hc2roomtempmod,,value
+*[hc2exthwcactive],,,hc2exthwcactive,,value
 *[hc2dewpointmonitoring],,,hc2dewpointmonitoring,,value
 *[hc3circuittype],,,hc3circuittype,,value
-*[hc3exthwcactive],,,hc3exthwcactive,,value
 *[hc3coolingenabled],,,hc3coolingenabled,,value
+*[hc3roomtempmod],,,hc3roomtempmod,,value
+*[hc3exthwcactive],,,hc3exthwcactive,,value
 *[hc3dewpointmonitoring],,,hc3dewpointmonitoring,,value
-r,,,CurrentErrors,Current errors,,,b503,0001,error,,UIN,0=None;509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_1,,UIN,0=None;509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_2,,UIN,0=None;509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_3,,UIN,0=None;509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_4,,UIN,0=None;509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,
+r,,,CurrentErrors,Current errors,,,b503,0001,error,,UIN,509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_1,,UIN,509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_2,,UIN,509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_3,,UIN,509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,,error_4,,UIN,509=RECOVAIR_comm_error;511=IOModule_comm_error;521=AF_Sensor_error;599=RF_comm_error;1192=RC_1_comm_error;1193=RC_2_comm_error;1194=RC_3_comm_error;1195=RC_4_comm_error;1200=Boiler_1_comm_error;1201=Boiler_2_comm_error;1202=Boiler_3_comm_error;1203=Boiler_4_comm_error;1204=Boiler_5_comm_error;1205=Boiler_6_comm_error;1206=Heatpump_1_comm_error;1207=Heatpump_2_comm_error;1208=Heatpump_3_comm_error;1209=Heatpump_4_comm_error;1210=Heatpump_5_comm_error;1211=Heatpump_6_comm_error;1212=FM3_1_comm_error;1213=FM3_2_comm_error;1214=FM3_3_comm_error;1218=FM5_comm_error;1219=VR92_1_comm_error;1220=VR92_2_comm_error;1221=VR92_3_comm_error;1222=VR92_4_comm_error;1227=VPM_W_comm_error;1228=VPM_S_comm_error;1229=VMS_comm_error;1231=FM3_1_config_error;1232=FM3_2_config_error;1233=FM3_3_config_error;1237=Not_supported_VR61;1238=Not_supported_VR68;1239=Not_supported_VR81;1240=Hydraulic_scheme_invalid;1244=FM3_missing;1245=FM3_sensor_S1_missing;1246=Solar_pump_1_error;1247=Solar_pump_2_error;1248=Not_supported_actoSTOR;1249=MA2_VWZ_AI_config_error;1251=VR71_config_error;1252=Boiler_7_comm_error;1253=Boiler_8_comm_error;1254=Heatpump_7_comm_error;1255=Heatpump_8_comm_error;1257=FM3_1_MA_config_error;1263=FM5_MA_config_error;1361=Room_sensor_error;1363=RC_1_temp_sensor_signal_invalid;1364=RC_2_temp_sensor_signal_invalid;1365=RC_3_temp_sensor_signal_invalid;1366=RC_4_temp_sensor_signal_invalid,,
 r,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020000000100,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,install,HwcBivalencePoint,Hwc bivalence point,,,b524,020100000100,value,,EXP,,°C,temperature
 r,,install,ContinuosHeating,continuos heating,,,b524,020000000200,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -23,19 +27,23 @@ r,,install,FrostOverrideTime,frost delay time,,,b524,020000000300,value,,IGN:4,,
 w,,install,FrostOverrideTime,frost delay time,,,b524,020100000300,value,,UIN,,h,hours
 r,,,GlobalSystemOff,Global System OFF,,,b524,020000000700,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,GlobalSystemOff,Global System OFF,,,b524,020100000700,value,,UCH,0=no;1=yes,,
-r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
-r,,install,MaxRoomHumidity,max room humidity,,,b524,020000000e00,value,,IGN:4,,,,value,,UIN,,,
-w,,install,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,
+[hwcenabled=1]r,,,HwcParallelLoading,hwc parallel loading,,,b524,020000000a00,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hwcenabled=1]w,,,HwcParallelLoading,hwc parallel loading,,,b524,020100000a00,value,,UCH,0=off;1=on,,
+r,,,HwcEnabled,hwc enabled,,,b524,020001000100,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
+w,,,HwcEnabled,hwc enabled,,,b524,020101000100,value,,UCH,0=no;1=yes,,
+[mo2=1]r,,,MaxRoomHumidity,max room humidity,,,b524,020000000e00,value,,IGN:4,,,,value,,UIN,,,
+[mo2=1]w,,,MaxRoomHumidity,max room humidity,,,b524,020100000e00,value,,UIN,,,
+r,,,MO2,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,value,,UIN,0=circulation_pump;1=dehumidifier;2=zone;3=anti_legio_pump;4=not_connected;5=active_cool_period,,
+w,,,MO2,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation_pump;1=dehumidifier;2=zone;3=anti_legio_pump;4=not_connected;5=active_cool_period,,
 r,,install,HybridManager,hybrid manager,,,b524,020000000f00,value,,IGN:4,,,,value,,UCH,0=trivalence;1=bivalence,,hybrid manager mode
 w,,install,HybridManager,hybrid manager,,,b524,020100000f00,value,,UCH,0=trivalence;1=bivalence,,hybrid manager mode
 r,,install,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,
 r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,
-r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
-r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
-w,,,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
+[hwcenabled=1]r,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
+[hwcenabled=1]w,,,HwcCylinderChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
+[hwcenabled=1]r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
+[hwcenabled=1]w,,,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
 r,,install,PumpAdditionalTime,pump additional time,,,b524,020000001b00,value,,IGN:4,,,,value,,UIN,,min,minutes
 w,,install,PumpAdditionalTime,pump additional time,,,b524,020100001b00,value,,UIN,,min,minutes
 r,,install,HcAlternativePoint,hc alternative point,,,b524,020000002200,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -46,14 +54,14 @@ r,,install,BackupBoiler,backup boiler,,,b524,020000002400,value,,IGN:4,,,,value,
 w,,install,BackupBoiler,backup boiler,,,b524,020100002400,value,,UCH,0=off;1=heat;2=water;3=heatandwater,,
 r,,install,HcEmergencyTemperature,hc emergency temperature,,,b524,020000002600,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,install,HcEmergencyTemperature,hc emergency temperature,,,b524,020100002600,value,,EXP,,°C,temperature
-r,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,value,,IGN:4,,,,value,,EXP,,K,
-w,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,
-r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IGN:4,,,,value,,EXP,,K,
-w,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
-r,,,HwcLegionellaTime,hwc legionella time,,,b524,020000002a00,value,,IGN:4,,,,value,,HTM,,,
-w,,,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
-r,,,HwcLegionellaDay,hwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
-w,,,HwcLegionellaDay,hwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
+[hwcenabled=1]r,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020000002700,value,,IGN:4,,,,value,,EXP,,K,
+[hwcenabled=1]w,,,HwcCylinderChargeHyst,hysteresis cylinder charge,,,b524,020100002700,value,,EXP,,K,
+[hwcenabled=1]r,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020000002900,value,,IGN:4,,,,value,,EXP,,K,
+[hwcenabled=1]w,,,HwcCylinderChargeOffset,offset cylinder charge,,,b524,020100002900,value,,EXP,,K,
+[hwcenabled=1]r,,,HwcLegionellaTime,hwc legionella time,,,b524,020000002a00,value,,IGN:4,,,,value,,HTM,,,
+[hwcenabled=1]w,,,HwcLegionellaTime,hwc legionella time,,,b524,020100002a00,value,,HTM,,,
+[hwcenabled=1]r,,,HwcLegionellaDay,hwc legionella day,,,b524,020000002b00,value,,IGN:4,,,,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
+[hwcenabled=1]w,,,HwcLegionellaDay,hwc legionella day,,,b524,020100002b00,value,,UCH,0=off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=daily,,
 r,,,MaintenanceDate,next maintenance,,,b524,020000002c00,value,,IGN:4,,,,value,,HDA:3,,,date
 w,,,MaintenanceDate,next maintenance,,,b524,020100002c00,value,,HDA:3,,,date
 r,,,OffsetOutsideTemp,offset outside temperature,,,b524,020000002d00,value,,IGN:4,,,,value,,EXP,,K,
@@ -74,8 +82,6 @@ w,,,ESCO,esco block function,,,b524,020100004500,value,,UCH,0=heatpump;1=backup;
 r,,,HwcFlowTempMax,hwc max flow temp,,,b524,020000004600,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,HwcFlowTempMax,hwc max flow temp,,,b524,020100004600,value,,EXP,,°C,temperature
 r,,,SystemFlowTemp,system flow temp,,,b524,020000004b00,value,,IGN:4,,,,value,,EXP,,°C,temperature
-r,,,MultiRelaySetting,multifunction relay setting,,,b524,020000004d00,value,,IGN:4,,,,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
-w,,,MultiRelaySetting,multifunction relay setting,,,b524,020100004d00,value,,UIN,0=circulation;1=dryer;2=zone;3=legiopump,,
 r,,,PrFuelSumHcThisMonth,this month's fuel consumption heating,,,b524,020000004e00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,PrEnergySumHcThisMonth,this month's energy consumption heating,,,b524,020000004f00,value,,IGN:4,,,,value,,ULG,,kWh,
 r,,,PrEnergySumHwcThisMonth,this month's energy consumption hot water,,,b524,020000005000,value,,IGN:4,,,,value,,ULG,,kWh,
@@ -108,8 +114,6 @@ r,,,HcCylinderTempTop,hc cylinder temperature top,,,b524,020000009f00,value,,IGN
 r,,,HcCylinderTempBottom,hc cylinder temperature bottom,,,b524,02000000a000,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,BufferChargeOffset,offset buffer charge,,,b524,02000000a200,value,,IGN:4,,,,value,,EXP,,K,
 w,,,BufferChargeOffset,offset buffer charge,,,b524,02010000a200,value,,EXP,,K,
-r,,,HwcEnabled,hwc enabled,,,b524,020001000100,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
-w,,,HwcEnabled,hwc enabled,,,b524,020101000100,value,,UCH,0=no;1=yes,,
 [hwcenabled=1]r,,,HwcCircPumpStatus,hwc circulation pump status,,,b524,020001000200,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hwcenabled=1]r,,,HwcOpMode,hwc operation mode,,,b524,020001000300,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 [hwcenabled=1]w,,,HwcOpMode,hwc operation mode,,,b524,020101000300,value,,UIN,0=off;1=time_controlled;2=manual,,
@@ -132,10 +136,12 @@ r,,,HwcStatus,hwc status,,,b524,020001000f00,value,,IGN:4,,,,value,,UIN,0=auto;7
 r,,,Hc1CircuitType,CircuitType heating circuit 1,,,b524,020002000200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
 [hc1circuittype=4]r,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020002000400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1circuittype=4]w,,,Hc1DesiredReturnTemp,DesiredReturnTemp heating circuit 1,,,b524,020102000400,value,,EXP,,°C,temperature
-r,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020002000500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020102000500,value,,UCH,0=off;1=on,,
+[hc1circuittype=1][hc1coolingenabled=1][hc1roomtempmod>=1]r,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020002000500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc1circuittype=1][hc1coolingenabled=1][hc1roomtempmod>=1]w,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020102000500,value,,UCH,0=off;1=on,,
 r,,,Hc1CoolingEnabled,CoolingEnabled heating circuit 1,,,b524,020002000600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc1CoolingEnabled,CoolingEnabled heating circuit 1,,,b524,020102000600,value,,UCH,0=off;1=on,,
+r,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
+w,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020102001500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc1FlowTempTarget,ActualFlowTempDesired heating circuit 1,,,b524,020002000700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc1FlowTemp,FlowTemp heating circuit 1,,,b524,020002000800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1exthwcactive=1]r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -163,8 +169,6 @@ w,,,Hc1HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 1,,,b524,020
 [hc1exthwcactive=1]w,,,Hc1ExtHwcOpMode,ExtHwcOpMode heating circuit 1,,,b524,020102001300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020002001400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc1SummerTempLimit,summer outside switchoff temperature heating circuit 1,,,b524,020102001400,value,,EXP,,°C,temperature
-r,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
-w,,,Hc1RoomTempMod,RoomTempMod heating circuit 1,,,b524,020102001500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc1ExtHeatDemand,ExtHeatDemand heating circuit 1,,,b524,020002001900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc1circuittype=1]r,,,Hc1MixerMovement,MixerMovement heating circuit 1,,,b524,020002001a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc1HeatCurveAdaption,HeatCurveAdaption heating circuit 1,,,b524,020002001c00,value,,IGN:4,,,,value,,EXP,,,
@@ -174,10 +178,12 @@ r,,,Hc1PumpStatus,PumpStatus heating circuit 1,,,b524,020002001e00,value,,IGN:4,
 r,,,Hc2CircuitType,CircuitType heating circuit 2,,,b524,020002010200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
 [hc1circuittype=4]r,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020002010400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1circuittype=4]w,,,Hc2DesiredReturnTemp,DesiredReturnTemp heating circuit 2,,,b524,020102010400,value,,EXP,,°C,temperature
-r,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020002010500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020102010500,value,,UCH,0=off;1=on,,
+[hc2circuittype=1][hc2coolingenabled=1][hc2roomtempmod>=1]r,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020002010500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc2circuittype=1][hc2coolingenabled=1][hc2roomtempmod>=1]w,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020102010500,value,,UCH,0=off;1=on,,
 r,,,Hc2CoolingEnabled,CoolingEnabled heating circuit 2,,,b524,020002010600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc2CoolingEnabled,CoolingEnabled heating circuit 2,,,b524,020102010600,value,,UCH,0=off;1=on,,
+r,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
+w,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020102011500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc2FlowTempTarget,ActualFlowTempDesired heating circuit 2,,,b524,020002010700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc2FlowTemp,FlowTemp heating circuit 2,,,b524,020002010800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2exthwcactive=1]r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -205,8 +211,6 @@ w,,,Hc2HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 2,,,b524,020
 [hc2exthwcactive=1]w,,,Hc2ExtHwcOpMode,ExtHwcOpMode heating circuit 2,,,b524,020102011300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020002011400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc2SummerTempLimit,summer outside switchoff temperature heating circuit 2,,,b524,020102011400,value,,EXP,,°C,temperature
-r,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
-w,,,Hc2RoomTempMod,RoomTempMod heating circuit 2,,,b524,020102011500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc2ExtHeatDemand,ExtHeatDemand heating circuit 2,,,b524,020002011900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc2circuittype=1]r,,,Hc2MixerMovement,MixerMovement heating circuit 2,,,b524,020002011a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc2HeatCurveAdaption,HeatCurveAdaption heating circuit 2,,,b524,020002011c00,value,,IGN:4,,,,value,,EXP,,,
@@ -216,10 +220,12 @@ r,,,Hc2PumpStatus,PumpStatus heating circuit 2,,,b524,020002011e00,value,,IGN:4,
 r,,,Hc3CircuitType,CircuitType heating circuit 3,,,b524,020002020200,value,,IGN:4,,,,value,,UCH,0=inactive;1=heat;2=fixed;3=water;4=returnincr,,hc type,ign,,IGN:1,,,
 [hc3circuittype=4]r,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020002020400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3circuittype=4]w,,,Hc3DesiredReturnTemp,DesiredReturnTemp heating circuit 3,,,b524,020102020400,value,,EXP,,°C,temperature
-r,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020002020500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-w,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020102020500,value,,UCH,0=off;1=on,,
+[hc3circuittype=1][hc3coolingenabled=1][hc3roomtempmod>=1]r,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020002020500,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
+[hc3circuittype=1][hc3coolingenabled=1][hc3roomtempmod>=1]w,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020102020500,value,,UCH,0=off;1=on,,
 r,,,Hc3CoolingEnabled,CoolingEnabled heating circuit 3,,,b524,020002020600,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 w,,,Hc3CoolingEnabled,CoolingEnabled heating circuit 3,,,b524,020102020600,value,,UCH,0=off;1=on,,
+r,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
+w,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020102021500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc3FlowTempTarget,ActualFlowTempDesired heating circuit 3,,,b524,020002020700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc3FlowTemp,FlowTemp heating circuit 3,,,b524,020002020800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3exthwcactive=1]r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -247,8 +253,6 @@ w,,,Hc3HeatingFlowTempMin,HeatingMinFlowTempDesired heating circuit 3,,,b524,020
 [hc3exthwcactive=1]w,,,Hc3ExtHwcOpMode,ExtHwcOpMode heating circuit 3,,,b524,020102021300,value,,UIN,0=off;1=time_controlled;2=manual,,
 r,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020002021400,value,,IGN:4,,,,value,,EXP,,°C,temperature
 w,,,Hc3SummerTempLimit,summer outside switchoff temperature heating circuit 3,,,b524,020102021400,value,,EXP,,°C,temperature
-r,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
-w,,,Hc3RoomTempMod,RoomTempMod heating circuit 3,,,b524,020102021500,value,,UIN,0=inactive;1=active;2=expanded,,
 r,,,Hc3ExtHeatDemand,ExtHeatDemand heating circuit 3,,,b524,020002021900,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [hc3circuittype=1]r,,,Hc3MixerMovement,MixerMovement heating circuit 3,,,b524,020002021a00,value,,IGN:4,,,,value,,EXP,,,
 r,,,Hc3HeatCurveAdaption,HeatCurveAdaption heating circuit 3,,,b524,020002021c00,value,,IGN:4,,,,value,,EXP,,,
@@ -257,8 +261,8 @@ w,,,Hc3Status,Status heating circuit 3,,,b524,020102021b00,value,,UCH,0=off;1=on
 r,,,Hc3PumpStatus,PumpStatus heating circuit 3,,,b524,020002021e00,value,,IGN:4,,,,value,,UCH,0=off;1=heat;2=cool;3=exthwc,,hc pump mode
 [hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingOpMode,cooling operation mode zone 1,,,b524,020003000100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 [hc1circuittype=1][hc1coolingenabled=1]w,,,Z1CoolingOpMode,cooling operation mode zone 1,,,b524,020103000100,value,,UIN,0=off;1=time_controlled;2=manual,,
-[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020003000200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc1circuittype=1][hc1coolingenabled=1]w,,,Z1CoolingSetbackTemp,cooling setpoint zone 1,,,b524,020103000200,value,,EXP,,°C,temperature
+[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingTimeContrTemp,cooling setpoint zone 1,,,b524,020003000200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1circuittype=1][hc1coolingenabled=1]w,,,Z1CoolingTimeContrTemp,cooling setpoint zone 1,,,b524,020103000200,value,,EXP,,°C,temperature
 [hc1circuittype=1]r,,,Z1HolidayStartPeriod,holiday period start zone 1,,,b524,020003000300,value,,IGN:4,,,,value,,HDA:3,,,holiday period from
 [hc1circuittype=1]w,,,Z1HolidayStartPeriod,holiday period start zone 1,,,b524,020103000300,value,,HDA:3,,,holiday period from
 [hc1circuittype=1]r,,,Z1HolidayEndPeriod,holiday period end zone 1,,,b524,020003000400,value,,IGN:4,,,,value,,HDA:3,,,holiday period to
@@ -301,8 +305,8 @@ r,,,Z1Status,zone 1 status,,,b524,020003001b00,value,,IGN:4,,,,value,,UIN,0=auto
 r,,,Z1RoomHumidity,room humidity zone 1,,,b524,020003002800,value,,IGN:4,,,,value,,EXP,,%,percentage
 [hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020003010100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 [hc2circuittype=1][hc2coolingenabled=1]w,,,Z2CoolingOpMode,cooling operation mode zone 2,,,b524,020103010100,value,,UIN,0=off;1=time_controlled;2=manual,,
-[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020003010200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc2circuittype=1][hc2coolingenabled=1]w,,,Z2CoolingSetbackTemp,cooling setpoint zone 2,,,b524,020103010200,value,,EXP,,°C,temperature
+[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingTimeContrTemp,cooling setpoint zone 2,,,b524,020003010200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2circuittype=1][hc2coolingenabled=1]w,,,Z2CoolingTimeContrTemp,cooling setpoint zone 2,,,b524,020103010200,value,,EXP,,°C,temperature
 [hc2circuittype=1]r,,,Z2HolidayStartPeriod,holiday period start zone 2,,,b524,020003010300,value,,IGN:4,,,,value,,HDA:3,,,holiday period from
 [hc2circuittype=1]w,,,Z2HolidayStartPeriod,holiday period start zone 2,,,b524,020103010300,value,,HDA:3,,,holiday period from
 [hc2circuittype=1]r,,,Z2HolidayEndPeriod,holiday period end zone 2,,,b524,020003010400,value,,IGN:4,,,,value,,HDA:3,,,holiday period to
@@ -345,8 +349,8 @@ r,,,Z2Status,zone 2 status,,,b524,020003011b00,value,,IGN:4,,,,value,,UIN,0=auto
 r,,,Z2RoomHumidity,room humidity zone 2,,,b524,020003012800,value,,IGN:4,,,,value,,EXP,,%,percentage
 [hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020003020100,value,,IGN:4,,,,value,,UIN,0=off;1=time_controlled;2=manual,,
 [hc3circuittype=1][hc3coolingenabled=1]w,,,Z3CoolingOpMode,cooling operation mode zone 3,,,b524,020103020100,value,,UIN,0=off;1=time_controlled;2=manual,,
-[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020003020200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc3circuittype=1][hc3coolingenabled=1]w,,,Z3CoolingSetbackTemp,cooling setpoint zone 3,,,b524,020103020200,value,,EXP,,°C,temperature
+[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingTimeContrTemp,cooling setpoint zone 3,,,b524,020003020200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3circuittype=1][hc3coolingenabled=1]w,,,Z3CoolingTimeContrTemp,cooling setpoint zone 3,,,b524,020103020200,value,,EXP,,°C,temperature
 [hc3circuittype=1]r,,,Z3HolidayStartPeriod,holiday period start zone 3,,,b524,020003020300,value,,IGN:4,,,,value,,HDA:3,,,holiday period from
 [hc3circuittype=1]w,,,Z3HolidayStartPeriod,holiday period start zone 3,,,b524,020103020300,value,,HDA:3,,,holiday period from
 [hc3circuittype=1]r,,,Z3HolidayEndPeriod,holiday period end zone 3,,,b524,020003020400,value,,IGN:4,,,,value,,HDA:3,,,holiday period to
