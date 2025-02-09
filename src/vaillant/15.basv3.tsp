@@ -3360,7 +3360,6 @@ namespace Basv3 {
     RC_2_temp_sensor_signal_invalid: 1364,
     RC_3_temp_sensor_signal_invalid: 1365,
     RC_4_temp_sensor_signal_invalid: 1366,
-    None: 65534,
   }
 
   enum Values_720errorstatus {
