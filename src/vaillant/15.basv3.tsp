@@ -14,30 +14,70 @@ namespace Basv3 {
 
   /** default *r */
   @base(MF, 0x3, 0)
-  model r_0 {}
+  model r_0a {}
 
-  model ErrorList {
-    @values(Values_720ErrorCode)
+  model errorlist {
+    @values(Values_720errorcode)
     error: UIN;
 
-    @values(Values_720ErrorCode)
+    @values(Values_720errorcode)
     error_1: UIN;
 
-    @values(Values_720ErrorCode)
+    @values(Values_720errorcode)
     error_2: UIN;
 
-    @values(Values_720ErrorCode)
+    @values(Values_720errorcode)
     error_3: UIN;
 
-    @values(Values_720ErrorCode)
+    @values(Values_720errorcode)
     error_4: UIN;
   }
 
   /** Current errors */
-  @inherit(r_0)
+  @inherit(r_0a)
   @ext(1)
   model CurrentErrors {
-    value: ErrorList;
+    value: errorlist;
+  }
+
+  /** default *r */
+  @base(MF, 0x3, 1)
+  model r_0b {}
+
+  /** default *wi for user level "install" */
+  @write
+  @auth("install")
+  @base(MF, 0x3, 0x2)
+  model wi_0b {}
+
+  model errorhistoryentry {
+    @values(Values_720errorstatus)
+    status: UCH;
+
+    time: BTM;
+
+    date: BDA3;
+
+    @values(Values_720errorcode)
+    error: UIN;
+  }
+
+  /** Error history */
+  @inherit(r_0b)
+  @ext(1)
+  model ErrorHistory {
+    @out
+    index: UCH;
+
+    errorhistory: errorhistoryentry;
+  }
+
+  /** Clear error history */
+  @inherit(wi_0b)
+  @ext(1)
+  model ClearErrorHistory {
+    @in
+    cleared: yesno;
   }
 
   /** default *r */
@@ -3263,7 +3303,7 @@ namespace Basv3 {
     value: wTimeSlotWithoutTemp;
   }
 
-  enum Values_720ErrorCode {
+  enum Values_720errorcode {
     RECOVAIR_comm_error: 509,
     IOModule_comm_error: 511,
     AF_Sensor_error: 521,
@@ -3320,5 +3360,12 @@ namespace Basv3 {
     RC_2_temp_sensor_signal_invalid: 1364,
     RC_3_temp_sensor_signal_invalid: 1365,
     RC_4_temp_sensor_signal_invalid: 1366,
+    None: 65535,
+  }
+
+  enum Values_720errorstatus {
+    none: 0,
+    ongoing: 1,
+    resolved: 2,
   }
 }
