@@ -74,7 +74,7 @@ namespace Hmu.Hw5103 {
     value: tempv;
   }
 
-/**
+  /**
   @inherit(r_0)
   @ext(0xa6, 0xe)
   model DiagFlowTemp {
@@ -93,7 +93,6 @@ namespace Hmu.Hw5103 {
     value: tempv;
   }
 */
-
   @inherit(r_0)
   @ext(0xac, 0x8)
   model EevOutletTemp {
@@ -118,7 +117,7 @@ namespace Hmu.Hw5103 {
     value: hoursum2;
   }
 
-/**
+  /**
   @inherit(r_0)
   @ext(0xbd, 0x9)
   model DiagWaterThroughput {
@@ -126,7 +125,6 @@ namespace Hmu.Hw5103 {
     value: EXP;
   }
 */
-
   @inherit(r_0)
   @ext(0xc2, 0xb)
   model CompressorHours {
@@ -205,6 +203,7 @@ namespace Hmu.Hw5103 {
   @base(MF, 0x11)
   model r_1 {}
 
+  /**
   @inherit(r_1)
   @ext(1)
   model Status {
@@ -213,7 +212,7 @@ namespace Hmu.Hw5103 {
     @maxLength(4) ign: IGN;
     pumpstate: pumpstate;
   }
-
+*/
   @condition(Id.Id.sw, ">=902")
   @inherit(r_1)
   @ext(0x18, 1)
@@ -240,7 +239,7 @@ namespace Hmu.Hw5103 {
     value: IGN;
   }
 
-/**
+  /**
   @inherit(r_2)
   @ext(0x14)
   model PowerConsumptionHmu {
@@ -366,7 +365,7 @@ namespace Hmu.Hw5103 {
     value: integral;
   }
 
-/**
+  /**
   @inherit(r_3)
   @ext(0x22)
   model SourceTempInput {
@@ -374,7 +373,6 @@ namespace Hmu.Hw5103 {
     value: D2C;
   }
 */
-
   @inherit(r_3)
   @ext(0x23)
   model CurrentYieldPower {
@@ -427,7 +425,6 @@ namespace Hmu.Hw5103 {
     @divisor(10)
     value: UIN;
   }
-
 
   @inherit(r_3)
   @ext(0x3c)

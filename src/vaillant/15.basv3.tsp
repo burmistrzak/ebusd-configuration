@@ -16,20 +16,20 @@ namespace Basv3 {
   @base(MF, 0x3, 0)
   model r_0a {}
 
-  model errorlist {
-    @values(Values_720errorcode)
+  model ErrorList {
+    @values(Values_720ErrorCode)
     error: UIN;
 
-    @values(Values_720errorcode)
+    @values(Values_720ErrorCode)
     error_1: UIN;
 
-    @values(Values_720errorcode)
+    @values(Values_720ErrorCode)
     error_2: UIN;
 
-    @values(Values_720errorcode)
+    @values(Values_720ErrorCode)
     error_3: UIN;
 
-    @values(Values_720errorcode)
+    @values(Values_720ErrorCode)
     error_4: UIN;
   }
 
@@ -37,47 +37,7 @@ namespace Basv3 {
   @inherit(r_0a)
   @ext(1)
   model CurrentErrors {
-    value: errorlist;
-  }
-
-  /** default *r */
-  @base(MF, 0x3, 1)
-  model r_0b {}
-
-  /** default *wi for user level "install" */
-  @write
-  @auth("install")
-  @base(MF, 0x3, 0x2)
-  model wi_0b {}
-
-  model errorhistoryentry {
-    @values(Values_720errorstatus)
-    status: UCH;
-
-    time: BTM;
-
-    date: BDA3;
-
-    @values(Values_720errorcode)
-    error: UIN;
-  }
-
-  /** Error history */
-  @inherit(r_0b)
-  @ext(1)
-  model ErrorHistory {
-    @out
-    index: UCH;
-
-    errorhistory: errorhistoryentry;
-  }
-
-  /** Clear error history */
-  @inherit(wi_0b)
-  @ext(1)
-  model ClearErrorHistory {
-    @in
-    cleared: yesno;
+    value: ErrorList;
   }
 
   /** default *r */
@@ -183,15 +143,13 @@ namespace Basv3 {
   /** hwc parallel loading */
   @inherit(r_1, w_1)
   @ext(0xa, 0)
-  @condition(Basv3.HwcEnabled.value, "1")
   model HwcParallelLoading {
     value: onoff;
   }
 
   /** max room humidity */
-  @inherit(r_1, w_1)
+  @inherit(ri_1, wi_1)
   @ext(0xe, 0)
-  @condition(Basv3.MO2.value, "1")
   model MaxRoomHumidity {
     @unit("%")
     value: UIN;
@@ -1667,7 +1625,6 @@ namespace Basv3 {
     @maxValue(12)
     @step(0.5)
     @unit("h")
-    @minValue(0.5) @maxValue(12) @step(0.5)
     value: EXP;
   }
 
@@ -1908,7 +1865,6 @@ namespace Basv3 {
     @maxValue(12)
     @step(0.5)
     @unit("h")
-    @minValue(0.5) @maxValue(12) @step(0.5)
     value: EXP;
   }
 
@@ -2149,7 +2105,6 @@ namespace Basv3 {
     @maxValue(12)
     @step(0.5)
     @unit("h")
-    @minValue(0.5) @maxValue(12) @step(0.5)
     value: EXP;
   }
 

@@ -16,7 +16,7 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
-/**
+  /**
   @inherit(r_0)
   @ext(0x6, 0x9)
   model DiagFlowTemp {
@@ -47,7 +47,6 @@ namespace Vwzio.Hw5103 {
     value: hoursum2;
   }
 */
-
   @inherit(r_0)
   @ext(0x5b, 0xd)
   model PowerConsumptionVWZ {
@@ -55,7 +54,7 @@ namespace Vwzio.Hw5103 {
     value: EXP;
   }
 
-/**
+  /**
   @inherit(r_0)
   @ext(0xbd, 0xb)
   model DiagImmersionHeaterHours {
@@ -88,7 +87,7 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
-/**
+  /**
   @inherit(r_2)
   @ext(0x14)
   model PowerConsumptionVwz {
@@ -105,14 +104,13 @@ namespace Vwzio.Hw5103 {
     value: IGN;
   }
 
-/**
+  /**
   @inherit(r_3)
   @ext(0x40)
   model TotalRunningHours {
     value: hoursum2;
   }
 */
-
   @inherit(r_3)
   @ext(0x46)
   model ImmersionHeaterHours {
@@ -171,5 +169,4 @@ namespace Vwzio.Hw5103 {
   model HwcMode {
     value: hwcmode3;
   }
-
 }
