@@ -155,13 +155,13 @@ namespace Ui {
     value: HEX;
   }
 
-  /** TempFailDetectTime */
+  /** TempFailDetectTime: temperature fail detection time */
   @ext(0x33, 0)
-  model TempFailDetectTime is InstallRegister<temp0>;
+  model TempFailDetectTime is InstallRegister<UCH>;
 
   /** LcdContrastPwmValue: contrast for the display */
   @ext(0x36, 0)
-  model LcdContrastPwmValue is InstallRegister<UCH>;
+  model LcdContrastPwmValue is InstallRegister<displaycontrast>;
 
   /** time */
   @ext(0x5f, 0)
