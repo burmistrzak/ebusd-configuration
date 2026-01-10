@@ -1,0 +1,12 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*r,
+*w,
+r,,,PowerConsumptionVWZ,,,,b509,5402005b0d,value,,IGN:4,,,,value,,EXP,,W,
+r,,,ImmersionHeaterHours,,,,b51a,05ff3246,value,,IGN:3,,,,value,,UIN,,h,Stunden
+r,,,ImmersionHeaterEnergy,,,,b51a,05ff3249,value,,IGN:3,,,,value,,UIN,,kWh,
+r,,,ImmersionHeaterStarts,,,,b51a,05ff324a,value,,IGN:3,,,,value,,UIN,,,Anzahl Starts
+r,,,PrioritySwitchingValveOps,,,,b51a,05ff324b,value,,IGN:3,,,,value,,UIN,,,Anzahl Starts
+r,,,ImmersionHeaterPower,,,,b51a,05ff324c,value,,IGN:3,,,,value,,SCH,10,kW,
+r,,,ImmersionHeaterTemp,,,,b51a,05ff325c,value,,IGN:3,,,,value,,SIN,10,°C,Temperatur
+r,,,HwcMode,,,,b51a,05ff345c,value,,IGN:3,,,,value,,UCH,0=eco;1=normal;2=balance,,Warmwasser Modus
+w,,,HwcMode,,,,b51a,06ff345c,value,,UCH,0=eco;1=normal;2=balance,,Warmwasser Modus
