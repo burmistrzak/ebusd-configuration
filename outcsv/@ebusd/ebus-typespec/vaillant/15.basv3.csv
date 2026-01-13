@@ -195,8 +195,8 @@ w,,install,HybridManager,hybrid manager,,,b524,020100000f00,value,,UCH,0=trivale
 r,,install,TariffAuxHeater,tariff aux heater,,,b524,020000001000,value,,IGN:4,,,,value,,UIN,,,
 r,,,AdaptHeatCurve,adaptive heat curve,,,b524,020000001400,value,,IGN:4,,,,value,,UCH,0=no;1=yes,,
 w,,,AdaptHeatCurve,adaptive heat curve,,,b524,020100001400,value,,UCH,0=no;1=yes,,
-[hwcenabled=1]r,,,HwcStorageChargeMaxTime,hwc cylinder maximum charging time,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
-[hwcenabled=1]w,,,HwcStorageChargeMaxTime,hwc cylinder maximum charging time,,,b524,020100001700,value,,UIN,,min,minutes
+[hwcenabled=1]r,,,HwcStorageChargeMaxTime,hwc cylinder maximum charging time15min=no limit,,,b524,020000001700,value,,IGN:4,,,,value,,UIN,,min,minutes
+[hwcenabled=1]w,,,HwcStorageChargeMaxTime,hwc cylinder maximum charging time15min=no limit,,,b524,020100001700,value,,UIN,,min,minutes
 [hwcenabled=1]r,,,HwcLockTime,hwc lock time,,,b524,020000001800,value,,IGN:4,,,,value,,UIN,,min,minutes
 [hwcenabled=1]w,,,HwcLockTime,hwc lock time,,,b524,020100001800,value,,UIN,,min,minutes
 r,,install,PumpAdditionalTime,pump additional time,,,b524,020000001b00,value,,IGN:4,,,,value,,UIN,,min,minutes
@@ -280,7 +280,7 @@ r,,,HwcStatus,hwc status,,,b524,020001000f00,value,,IGN:4,,,,value,,UIN,0=auto;7
 [hc1circuittype=1][hc1coolingenabled=1][hc1roomtempmodulation>=1]w,,,Hc1DewPointMonitoring,DewPointMonitoring heating circuit 1,,,b524,020102000500,value,,UCH,0=off;1=on,,
 r,,,Hc1RoomTempModulation,RoomTempModulation heating circuit 1,,,b524,020002001500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc1RoomTempModulation,RoomTempModulation heating circuit 1,,,b524,020102001500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc1FlowTempTarget,ActualFlowTempDesired heating circuit 1,,,b524,020002000700,value,,IGN:4,,,,value,,EXP,,°C,temperature
+r,,,Hc1FlowTempDesired,ActualFlowTempDesired heating circuit 1,,,b524,020002000700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc1FlowTemp,FlowTemp heating circuit 1,,,b524,020002000800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1exthwcactive=1]r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1exthwcactive=1]w,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020102000900,value,,EXP,,°C,temperature
@@ -319,7 +319,7 @@ r,,,Hc1PumpStatus,PumpStatus heating circuit 1,,,b524,020002001e00,value,,IGN:4,
 [hc2circuittype=1][hc2coolingenabled=1][hc2roomtempmodulation>=1]w,,,Hc2DewPointMonitoring,DewPointMonitoring heating circuit 2,,,b524,020102010500,value,,UCH,0=off;1=on,,
 r,,,Hc2RoomTempModulation,RoomTempModulation heating circuit 2,,,b524,020002011500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc2RoomTempModulation,RoomTempModulation heating circuit 2,,,b524,020102011500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc2FlowTempTarget,ActualFlowTempDesired heating circuit 2,,,b524,020002010700,value,,IGN:4,,,,value,,EXP,,°C,temperature
+r,,,Hc2FlowTempDesired,ActualFlowTempDesired heating circuit 2,,,b524,020002010700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc2FlowTemp,FlowTemp heating circuit 2,,,b524,020002010800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2exthwcactive=1]r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2exthwcactive=1]w,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020102010900,value,,EXP,,°C,temperature
@@ -358,7 +358,7 @@ r,,,Hc2PumpStatus,PumpStatus heating circuit 2,,,b524,020002011e00,value,,IGN:4,
 [hc3circuittype=1][hc3coolingenabled=1][hc3roomtempmodulation>=1]w,,,Hc3DewPointMonitoring,DewPointMonitoring heating circuit 3,,,b524,020102020500,value,,UCH,0=off;1=on,,
 r,,,Hc3RoomTempModulation,RoomTempModulation heating circuit 3,,,b524,020002021500,value,,IGN:4,,,,value,,UIN,0=inactive;1=active;2=expanded,,
 w,,,Hc3RoomTempModulation,RoomTempModulation heating circuit 3,,,b524,020102021500,value,,UIN,0=inactive;1=active;2=expanded,,
-r,,,Hc3FlowTempTarget,ActualFlowTempDesired heating circuit 3,,,b524,020002020700,value,,IGN:4,,,,value,,EXP,,°C,temperature
+r,,,Hc3FlowTempDesired,ActualFlowTempDesired heating circuit 3,,,b524,020002020700,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Hc3FlowTemp,FlowTemp heating circuit 3,,,b524,020002020800,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3exthwcactive=1]r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3exthwcactive=1]w,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020102020900,value,,EXP,,°C,temperature
@@ -413,8 +413,8 @@ r,,,Z1RoomTemp,room temperature zone 1,,,b524,020003000f00,value,,IGN:4,,,,value
 r,,,Z1ValveStatus,valve status zone 1,,,b524,020003001200,value,,IGN:4,,,,value,,UCH,0=close;1=open,,zone valve state
 r,,,Z1RoomZoneMapping,room zone mapping zone 1,,,b524,020003001300,value,,IGN:4,,,,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
 w,,,Z1RoomZoneMapping,room zone mapping zone 1,,,b524,020103001300,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
-[hc1circuittype=1]r,,,Z1EffectiveHeatingRoomTempDesired,heating room temperature desired zone 1,,,b524,020003001400,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingRoomTempTarget,cooling room temperature desired zone 1,,,b524,020003001500,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1circuittype=1]r,,,Z1HeatingTempDesired,heating room temperature desired zone 1,,,b524,020003001400,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingTempDesired,cooling room temperature desired zone 1,,,b524,020003001500,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Z1Shortname,short name of zone 1,,,b524,020003001600,value,,IGN:4,,,,value,,STR:6,,,name
 w,,,Z1Shortname,short name of zone 1,,,b524,020103001600,value,,STR:6,,,name
 r,,,Z1Name1,zone 1 label (first part),,,b524,020003001700,value,,IGN:4,,,,value,,STR:5,,,zone name
@@ -427,10 +427,10 @@ r,,,Z1Status,zone 1 status,,,b524,020003001b00,value,,IGN:4,,,,value,,UIN,0=auto
 [hc1circuittype=1]w,,,Z1HolidayEndTime,end time of holidays for zone 1,,,b524,020103002000,value,,HTI,,,
 [hc1circuittype=1]r,,,Z1HolidayStartTime,start time of holidays for zone 1,,,b524,020003002100,value,,IGN:4,,,,value,,HTI,,,
 [hc1circuittype=1]w,,,Z1HolidayStartTime,start time of holidays for zone 1,,,b524,020103002100,value,,HTI,,,
-[hc1circuittype=1]r,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020003002200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc1circuittype=1]w,,,Z1HeatingSetpointTemp,manual heating setpoint zone 1,,,b524,020103002200,value,,EXP,,°C,temperature
-[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020003002300,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc1circuittype=1][hc1coolingenabled=1]w,,,Z1CoolingSetpointTemp,manual cooling setpoint zone 1,,,b524,020103002300,value,,EXP,,°C,temperature
+[hc1circuittype=1]r,,,Z1HeatingManualTemp,manual heating setpoint zone 1,,,b524,020003002200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1circuittype=1]w,,,Z1HeatingManualTemp,manual heating setpoint zone 1,,,b524,020103002200,value,,EXP,,°C,temperature
+[hc1circuittype=1][hc1coolingenabled=1]r,,,Z1CoolingManualTemp,manual cooling setpoint zone 1,,,b524,020003002300,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc1circuittype=1][hc1coolingenabled=1]w,,,Z1CoolingManualTemp,manual cooling setpoint zone 1,,,b524,020103002300,value,,EXP,,°C,temperature
 [hc1circuittype=1]r,,,Z1QuickVetoEndDate,quick veto end date zone 1,,,b524,020003002400,value,,IGN:4,,,,value,,HDA:3,,,date
 [hc1circuittype=1]r,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020003002600,value,,IGN:4,,,,value,,EXP,,h,
 [hc1circuittype=1]w,,,Z1QuickVetoDuration,quick veto duration zone 1,,,b524,020103002600,value,,EXP,,h,
@@ -457,8 +457,8 @@ r,,,Z2RoomTemp,room temperature zone 2,,,b524,020003010f00,value,,IGN:4,,,,value
 r,,,Z2ValveStatus,valve status zone 2,,,b524,020003011200,value,,IGN:4,,,,value,,UCH,0=close;1=open,,zone valve state
 r,,,Z2RoomZoneMapping,room zone mapping zone 2,,,b524,020003011300,value,,IGN:4,,,,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
 w,,,Z2RoomZoneMapping,room zone mapping zone 2,,,b524,020103011300,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
-[hc2circuittype=1]r,,,Z2EffectiveHeatingRoomTempDesired,heating room temperature desired zone 2,,,b524,020003011400,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingRoomTempTarget,cooling room temperature desired zone 2,,,b524,020003011500,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2circuittype=1]r,,,Z2HeatingTempDesired,heating room temperature desired zone 2,,,b524,020003011400,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingTempDesired,cooling room temperature desired zone 2,,,b524,020003011500,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Z2Shortname,short name of zone 2,,,b524,020003011600,value,,IGN:4,,,,value,,STR:6,,,name
 w,,,Z2Shortname,short name of zone 2,,,b524,020103011600,value,,STR:6,,,name
 r,,,Z2Name1,zone 2 label (first part),,,b524,020003011700,value,,IGN:4,,,,value,,STR:5,,,zone name
@@ -471,10 +471,10 @@ r,,,Z2Status,zone 2 status,,,b524,020003011b00,value,,IGN:4,,,,value,,UIN,0=auto
 [hc2circuittype=1]w,,,Z2HolidayEndTime,end time of holidays for zone 2,,,b524,020103012000,value,,HTI,,,
 [hc2circuittype=1]r,,,Z2HolidayStartTime,start time of holidays for zone 2,,,b524,020003012100,value,,IGN:4,,,,value,,HTI,,,
 [hc2circuittype=1]w,,,Z2HolidayStartTime,start time of holidays for zone 2,,,b524,020103012100,value,,HTI,,,
-[hc2circuittype=1]r,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020003012200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc2circuittype=1]w,,,Z2HeatingSetpointTemp,manual heating setpoint zone 2,,,b524,020103012200,value,,EXP,,°C,temperature
-[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020003012300,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc2circuittype=1][hc2coolingenabled=1]w,,,Z2CoolingSetpointTemp,manual cooling setpoint zone 2,,,b524,020103012300,value,,EXP,,°C,temperature
+[hc2circuittype=1]r,,,Z2HeatingManualTemp,manual heating setpoint zone 2,,,b524,020003012200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2circuittype=1]w,,,Z2HeatingManualTemp,manual heating setpoint zone 2,,,b524,020103012200,value,,EXP,,°C,temperature
+[hc2circuittype=1][hc2coolingenabled=1]r,,,Z2CoolingManualTemp,manual cooling setpoint zone 2,,,b524,020003012300,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc2circuittype=1][hc2coolingenabled=1]w,,,Z2CoolingManualTemp,manual cooling setpoint zone 2,,,b524,020103012300,value,,EXP,,°C,temperature
 [hc2circuittype=1]r,,,Z2QuickVetoEndDate,quick veto end date zone 2,,,b524,020003012400,value,,IGN:4,,,,value,,HDA:3,,,date
 [hc2circuittype=1]r,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020003012600,value,,IGN:4,,,,value,,EXP,,h,
 [hc2circuittype=1]w,,,Z2QuickVetoDuration,quick veto duration zone 2,,,b524,020103012600,value,,EXP,,h,
@@ -501,8 +501,8 @@ r,,,Z3RoomTemp,room temperature zone 3,,,b524,020003020f00,value,,IGN:4,,,,value
 r,,,Z3ValveStatus,valve status zone 3,,,b524,020003021200,value,,IGN:4,,,,value,,UCH,0=close;1=open,,zone valve state
 r,,,Z3RoomZoneMapping,room zone mapping zone 3,,,b524,020003021300,value,,IGN:4,,,,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
 w,,,Z3RoomZoneMapping,room zone mapping zone 3,,,b524,020103021300,value,,UIN,0=none;1=VRC720;2=VR91_1;3=VR91_2;4=VR91_3,,
-[hc3circuittype=1]r,,,Z3EffectiveHeatingRoomTempDesired,heating room temperature desired zone 3,,,b524,020003021400,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingRoomTempTarget,cooling room temperature desired zone 3,,,b524,020003021500,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3circuittype=1]r,,,Z3HeatingTempDesired,heating room temperature desired zone 3,,,b524,020003021400,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingTempDesired,cooling room temperature desired zone 3,,,b524,020003021500,value,,IGN:4,,,,value,,EXP,,°C,temperature
 r,,,Z3Shortname,short name of zone 3,,,b524,020003021600,value,,IGN:4,,,,value,,STR:6,,,name
 w,,,Z3Shortname,short name of zone 3,,,b524,020103021600,value,,STR:6,,,name
 r,,,Z3Name1,zone 3 label (first part),,,b524,020003021700,value,,IGN:4,,,,value,,STR:5,,,zone name
@@ -515,10 +515,10 @@ r,,,Z3Status,zone 3 status,,,b524,020003021b00,value,,IGN:4,,,,value,,UIN,0=auto
 [hc3circuittype=1]w,,,Z3HolidayEndTime,end time of holidays for zone 3,,,b524,020103022000,value,,HTI,,,
 [hc3circuittype=1]r,,,Z3HolidayStartTime,start time of holidays for zone 3,,,b524,020003022100,value,,IGN:4,,,,value,,HTI,,,
 [hc3circuittype=1]w,,,Z3HolidayStartTime,start time of holidays for zone 3,,,b524,020103022100,value,,HTI,,,
-[hc3circuittype=1]r,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020003022200,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc3circuittype=1]w,,,Z3HeatingSetpointTemp,manual heating setpoint zone 3,,,b524,020103022200,value,,EXP,,°C,temperature
-[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020003022300,value,,IGN:4,,,,value,,EXP,,°C,temperature
-[hc3circuittype=1][hc3coolingenabled=1]w,,,Z3CoolingSetpointTemp,manual cooling setpoint zone 3,,,b524,020103022300,value,,EXP,,°C,temperature
+[hc3circuittype=1]r,,,Z3HeatingManualTemp,manual heating setpoint zone 3,,,b524,020003022200,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3circuittype=1]w,,,Z3HeatingManualTemp,manual heating setpoint zone 3,,,b524,020103022200,value,,EXP,,°C,temperature
+[hc3circuittype=1][hc3coolingenabled=1]r,,,Z3CoolingManualTemp,manual cooling setpoint zone 3,,,b524,020003022300,value,,IGN:4,,,,value,,EXP,,°C,temperature
+[hc3circuittype=1][hc3coolingenabled=1]w,,,Z3CoolingManualTemp,manual cooling setpoint zone 3,,,b524,020103022300,value,,EXP,,°C,temperature
 [hc3circuittype=1]r,,,Z3QuickVetoEndDate,quick veto end date zone 3,,,b524,020003022400,value,,IGN:4,,,,value,,HDA:3,,,date
 [hc3circuittype=1]r,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020003022600,value,,IGN:4,,,,value,,EXP,,h,
 [hc3circuittype=1]w,,,Z3QuickVetoDuration,quick veto duration zone 3,,,b524,020103022600,value,,EXP,,h,
