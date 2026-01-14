@@ -765,7 +765,7 @@ namespace Basv3 {
   @ext(0xa, 0)
   @condition(Basv3.Hc1CircuitType.value, "1")
   @condition(Basv3.Hc1CoolingEnabled.value, "1")
-  @condition(Basv3.Hc1DewPointMonitoring.value, "1")
+  @condition(Basv3.Hc1RoomTempModulation.value, ">=1")
   model Hc1DewPointOffset {
     @minValue(-10)
     @maxValue(10)
@@ -1001,7 +1001,7 @@ namespace Basv3 {
   @ext(0xa, 0)
   @condition(Basv3.Hc2CircuitType.value, "1")
   @condition(Basv3.Hc2CoolingEnabled.value, "1")
-  @condition(Basv3.Hc2DewPointMonitoring.value, "1")
+  @condition(Basv3.Hc2RoomTempModulation.value, ">=1")
   model Hc2DewPointOffset {
     @minValue(-10)
     @maxValue(10)
@@ -1237,7 +1237,7 @@ namespace Basv3 {
   @ext(0xa, 0)
   @condition(Basv3.Hc3CircuitType.value, "1")
   @condition(Basv3.Hc3CoolingEnabled.value, "1")
-  @condition(Basv3.Hc3DewPointMonitoring.value, "1")
+  @condition(Basv3.Hc3RoomTempModulation.value, ">=1")
   model Hc3DewPointOffset {
     @minValue(-10)
     @maxValue(10)
@@ -1625,7 +1625,7 @@ namespace Basv3 {
     @minValue(0.5)
     @maxValue(12)
     @step(0.5)
-    @unit("h")
+    @unit("h") // TODO: Causes to be detected as read-only sensor
     value: EXP;
   }
 
@@ -1865,7 +1865,7 @@ namespace Basv3 {
     @minValue(0.5)
     @maxValue(12)
     @step(0.5)
-    @unit("h")
+    @unit("h") // TODO: Causes to be detected as read-only sensor
     value: EXP;
   }
 
@@ -2105,7 +2105,7 @@ namespace Basv3 {
     @minValue(0.5)
     @maxValue(12)
     @step(0.5)
-    @unit("h")
+    @unit("h") // TODO: Causes to be detected as read-only sensor
     value: EXP;
   }
 
