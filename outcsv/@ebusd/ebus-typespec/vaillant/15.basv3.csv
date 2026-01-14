@@ -13,17 +13,14 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *[hc1coolingenabled],,,hc1coolingenabled,,value
 *[hc1roomtempmodulation],,,hc1roomtempmodulation,,value
 *[hc1exthwcactive],,,hc1exthwcactive,,value
-*[hc1dewpointmonitoring],,,hc1dewpointmonitoring,,value
 *[hc2circuittype],,,hc2circuittype,,value
 *[hc2coolingenabled],,,hc2coolingenabled,,value
 *[hc2roomtempmodulation],,,hc2roomtempmodulation,,value
 *[hc2exthwcactive],,,hc2exthwcactive,,value
-*[hc2dewpointmonitoring],,,hc2dewpointmonitoring,,value
 *[hc3circuittype],,,hc3circuittype,,value
 *[hc3coolingenabled],,,hc3coolingenabled,,value
 *[hc3roomtempmodulation],,,hc3roomtempmodulation,,value
 *[hc3exthwcactive],,,hc3exthwcactive,,value
-*[hc3dewpointmonitoring],,,hc3dewpointmonitoring,,value
 [Basv3_hwcenabled=1]r,,,HwcCircPumpStatus,hwc circulation pump status,,,b524,020001000200,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
 [Basv3_hwcenabled=1]r,,,HwcOpMode,hwc operation mode,,,b524,020001000300,value,,IGN:4,,,,value,,UIN,0=off;1=auto;2=manual,,
 [Basv3_hwcenabled=1]w,,,HwcOpMode,hwc operation mode,,,b524,020101000300,value,,UIN,0=off;1=auto;2=manual,,
@@ -285,8 +282,8 @@ r,,,Hc1FlowTemp,FlowTemp heating circuit 1,,,b524,020002000800,value,,IGN:4,,,,v
 [hc1exthwcactive=1]r,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020002000900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc1exthwcactive=1]w,,,Hc1ExtHwcTempDesired,ExtHwcTempDesired heating circuit 1,,,b524,020102000900,value,,EXP,,°C,temperature
 r,,,Hc1ExtHwcActive,ExtHwcActive heating circuit 1,,,b524,020002001800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-[hc1circuittype=1][hc1coolingenabled=1][hc1dewpointmonitoring=1]r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc1circuittype=1][hc1coolingenabled=1][hc1dewpointmonitoring=1]w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,value,,EXP,,K,
+[hc1circuittype=1][hc1coolingenabled=1][hc1roomtempmodulation>=1]r,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020002000a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc1circuittype=1][hc1coolingenabled=1][hc1roomtempmodulation>=1]w,,,Hc1DewPointOffset,DewPointOffset heating circuit 1,,,b524,020102000a00,value,,EXP,,K,
 [hc1circuittype=1]r,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020002000b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc1circuittype=1]w,,,Hc1ExcessTemp,ExcessTemp heating circuit 1,,,b524,020102000b00,value,,EXP,,K,
 [hc1circuittype=2]r,,,Hc1FixedDesiredTemp,DesiredTemp heating circuit 1,,,b524,020002000c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -324,8 +321,8 @@ r,,,Hc2FlowTemp,FlowTemp heating circuit 2,,,b524,020002010800,value,,IGN:4,,,,v
 [hc2exthwcactive=1]r,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020002010900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc2exthwcactive=1]w,,,Hc2ExtHwcTempDesired,ExtHwcTempDesired heating circuit 2,,,b524,020102010900,value,,EXP,,°C,temperature
 r,,,Hc2ExtHwcActive,ExtHwcActive heating circuit 2,,,b524,020002011800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-[hc2circuittype=1][hc2coolingenabled=1][hc2dewpointmonitoring=1]r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc2circuittype=1][hc2coolingenabled=1][hc2dewpointmonitoring=1]w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,value,,EXP,,K,
+[hc2circuittype=1][hc2coolingenabled=1][hc2roomtempmodulation>=1]r,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020002010a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc2circuittype=1][hc2coolingenabled=1][hc2roomtempmodulation>=1]w,,,Hc2DewPointOffset,DewPointOffset heating circuit 2,,,b524,020102010a00,value,,EXP,,K,
 [hc2circuittype=1]r,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020002010b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc2circuittype=1]w,,,Hc2ExcessTemp,ExcessTemp heating circuit 2,,,b524,020102010b00,value,,EXP,,K,
 [hc2circuittype=2]r,,,Hc2FixedDesiredTemp,DesiredTemp heating circuit 2,,,b524,020002010c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
@@ -363,8 +360,8 @@ r,,,Hc3FlowTemp,FlowTemp heating circuit 3,,,b524,020002020800,value,,IGN:4,,,,v
 [hc3exthwcactive=1]r,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020002020900,value,,IGN:4,,,,value,,EXP,,°C,temperature
 [hc3exthwcactive=1]w,,,Hc3ExtHwcTempDesired,ExtHwcTempDesired heating circuit 3,,,b524,020102020900,value,,EXP,,°C,temperature
 r,,,Hc3ExtHwcActive,ExtHwcActive heating circuit 3,,,b524,020002021800,value,,IGN:4,,,,value,,UCH,0=off;1=on,,
-[hc3circuittype=1][hc3coolingenabled=1][hc3dewpointmonitoring=1]r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,value,,EXP,,K,
-[hc3circuittype=1][hc3coolingenabled=1][hc3dewpointmonitoring=1]w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,value,,EXP,,K,
+[hc3circuittype=1][hc3coolingenabled=1][hc3roomtempmodulation>=1]r,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020002020a00,value,,IGN:4,,,,value,,EXP,,K,
+[hc3circuittype=1][hc3coolingenabled=1][hc3roomtempmodulation>=1]w,,,Hc3DewPointOffset,DewPointOffset heating circuit 3,,,b524,020102020a00,value,,EXP,,K,
 [hc3circuittype=1]r,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020002020b00,value,,IGN:4,,,,value,,EXP,,K,
 [hc3circuittype=1]w,,,Hc3ExcessTemp,ExcessTemp heating circuit 3,,,b524,020102020b00,value,,EXP,,K,
 [hc3circuittype=2]r,,,Hc3FixedDesiredTemp,DesiredTemp heating circuit 3,,,b524,020002020c00,value,,IGN:4,,,,value,,EXP,,°C,temperature
